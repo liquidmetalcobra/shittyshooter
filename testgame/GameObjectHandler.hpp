@@ -10,7 +10,7 @@
 #include <iostream>
 #include "globals.h"
 #include "gameobject.hpp"
-//#include "Collider.hpp"
+#include "Collider.hpp"
 #include <vector>
 
 #define G_Handler GameObjectHandler::instance()

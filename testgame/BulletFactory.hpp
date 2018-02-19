@@ -19,12 +19,12 @@ public:
     }
     ~BulletFactory()
     {
-    //    std::cout << "factory dying\n\n";
+    /*    std::cout << "factory dying\n\n";
         for (int i = 0; i < count; i++)
         {
-            G_Collider->remove(bullets[i]);
+        //    G_Handler->remove(bullets[i]);
             delete bullets[i];
-        }
+        }//*/
     }
     
     void generateBullet(int x, int y, int xVel, int yVel, int id);

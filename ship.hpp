@@ -26,7 +26,7 @@ public:
         w = iW;
         h = iH;
         
-        G_Collider->add(this,COLLISION_CLASS_SHIP);
+        
         collisionClass = COLLISION_CLASS_SHIP;
         bulletGen = new BulletFactory();
         

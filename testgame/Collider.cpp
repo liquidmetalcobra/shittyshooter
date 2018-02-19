@@ -83,6 +83,7 @@ void collider::update()
 
 void collider::add(gameobject* a, collisionClasses id)
 {
+    printf("ADDING object of class %d to c\n",a->getCollisionClass());
     if(id==COLLISION_CLASS_SHIP)
         ships.push_back(a);
     else if (id==COLLISION_CLASS_BULLET)
@@ -92,6 +93,7 @@ void collider::add(gameobject* a, collisionClasses id)
 }
 void collider::remove(gameobject * r)
 {
+    printf("Trying to remove object of class %d from c",r->getCollisionClass());
     ships.erase(std::remove(ships.begin(), ships.end(), r), ships.end());
     bullets.erase(std::remove(bullets.begin(), bullets.end(), r), bullets.end());
     powerups.erase(std::remove(powerups.begin(), powerups.end(), r), powerups.end());

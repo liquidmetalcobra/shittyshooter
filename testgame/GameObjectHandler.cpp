@@ -11,11 +11,14 @@
 GameObjectHandler *GameObjectHandler::handler = 0;
 void GameObjectHandler::add(gameobject* a)
 {
+    printf("ADDING object of class %d to goh",a->getCollisionClass());
     objects.push_back(a);
+    if(a->getCollisionClass() != COLLISION_CLASS_NONE)
+        G_Collider->add(a,a->getCollisionClass());
 }
 void GameObjectHandler::remove(gameobject * r)
 {
-    
+    printf("Trying to remove object of class %d from goh",r->getCollisionClass());
     objects.erase(std::remove(objects.begin(), objects.end(), r), objects.end());
 }
 
@@ -42,6 +45,7 @@ void GameObjectHandler::update()
     
     
 }
+
 
 void GameObjectHandler::draw()
 {

@@ -10,6 +10,8 @@
 #include <stdio.h>
 #include "allegro5/allegro.h"
 #include "Collider.hpp"
+#include "GameObjectHandler.hpp"
+
 class bullet: public gameobject {
 public:
     bullet(int iX, int iY, int xVel, int yVel, int iID)
@@ -22,7 +24,7 @@ public:
         id = iID;
         w = h = 10;
         b = al_create_bitmap(10, 10);
-        G_Collider->add(this, COLLISION_CLASS_BULLET);
+        
         al_set_target_bitmap(b);
         al_clear_to_color(al_map_rgb(255, 0, 0));
 

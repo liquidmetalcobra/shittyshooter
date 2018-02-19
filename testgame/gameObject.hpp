@@ -21,7 +21,7 @@ public:
         this->y = 200;
         this->size = 100;
         this->id = 0;
-        //collisionClasses = COLLISION_CLASS_NONE;
+        collisionClass = COLLISION_CLASS_NONE;
         markForDeath = false;
     };
     

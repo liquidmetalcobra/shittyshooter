@@ -12,7 +12,7 @@ height = 20,
 health = 40,
 update = function(spider, player)
   --  count = count + dir * value
-    print("count is ", count);
+ --   print("count is ", count);
     if(dir == 0) then
         if count < 40 then
             count = count + 1

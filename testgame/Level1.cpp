@@ -55,7 +55,7 @@ void Level1::load(PlayerShip *ps)
     else
     {
         s = ps;
-        G_Collider->add(s, COLLISION_CLASS_SHIP);
+        
     }
     
     

@@ -24,7 +24,7 @@ public:
         
         w = h = 10;
         b = al_create_bitmap(10, 10);
-        G_Collider->add(this, COLLISION_CLASS_POWERUP);
+        
         al_set_target_bitmap(b);
         al_clear_to_color(al_map_rgb(250, 250, 250));
         
