@@ -33,7 +33,7 @@ void bullet::draw()
 
 void bullet::destroy()
 {
-    c->remove(this);
+    G_Collider->remove(this);
     this->~bullet();
     
 }

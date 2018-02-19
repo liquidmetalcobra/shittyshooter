@@ -12,11 +12,15 @@
 #include "globals.h"
 #include "gameobject.hpp"
 
-enum collisionClasses { COLLISION_CLASS_SHIP, COLLISION_CLASS_BULLET, COLLISION_CLASS_POWERUP};
+
+#define G_Collider collider::instance()
+
+
 
 class collider
 {
-public:
+
+    static collider *col;
     collider()
     {
     };
@@ -25,6 +29,14 @@ public:
         bullets.clear();
         powerups.clear();
     };
+    
+public:
+    static collider *instance()
+    {
+        if (!col)
+            col = new collider();
+        return col;
+    }
     
     void update();
     void add(gameobject* a, collisionClasses id);

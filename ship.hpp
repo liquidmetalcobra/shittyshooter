@@ -19,16 +19,16 @@ using namespace std;
 
 class ship: public gameobject {
 public:
-    ship(int iX, int iY, int iW, int iH, collider *newCollider)
+    ship(int iX, int iY, int iW, int iH)
     {
         x = iX;
         y = iY;
         w = iW;
         h = iH;
-        c = newCollider;
-        c->add(this,COLLISION_CLASS_SHIP);
         
-        bulletGen = new BulletFactory(c);
+        G_Collider->add(this,COLLISION_CLASS_SHIP);
+        collisionClass = COLLISION_CLASS_SHIP;
+        bulletGen = new BulletFactory();
         
     }
     ~ship()
@@ -61,7 +61,7 @@ protected:
     int s_w;
     int s_h;
     BulletFactory *bulletGen;
-    collider *c;
+    
     
    
 };

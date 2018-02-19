@@ -40,7 +40,7 @@ void PowerUp::draw()
 
 void PowerUp::destroy()
 {
-    c->remove(this);
+    G_Collider->remove(this);
     this->~PowerUp();
     
 }

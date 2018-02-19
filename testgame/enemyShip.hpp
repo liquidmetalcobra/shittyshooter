@@ -16,7 +16,7 @@
 class enemyShip : public ship {
 public:
     
-    enemyShip(int iX, int iY,string scriptName, collider* newCollider) : ship(iX,iY,20,20,newCollider) 
+    enemyShip(int iX, int iY,string scriptName) : ship(iX,iY,20,20)
     {
         
         updateFunc = nullptr;

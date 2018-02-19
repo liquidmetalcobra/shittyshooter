@@ -7,6 +7,7 @@
 //
 
 #include "Collider.hpp"
+collider *collider::col = 0;
 
 long collider::getSize(collisionClasses c)
 {

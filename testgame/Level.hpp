@@ -20,16 +20,12 @@ using namespace std;
 
 class Level {
 public:
-    Level(collider *ic, GameObjectHandler *ihandler)
+    Level()
     {
-        c = ic;
-        handler = ihandler;
         levelComplete = false;
     }
     ~Level()
     {
-        delete c;
-        delete handler;
         delete s;
         
     }
@@ -48,8 +44,6 @@ protected:
     int nextLevel;
     int levelID;
     
-    collider *c;
-    GameObjectHandler *handler;
     
     
 };

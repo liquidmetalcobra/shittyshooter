@@ -15,7 +15,7 @@
 class PlayerShip : public ship
 {
 public:
-    PlayerShip(int iX, int iY, int iW, int iH, collider* newCollider) : ship(iX,iY,iW,iH,newCollider)
+    PlayerShip(int iX, int iY, int iW, int iH) : ship(iX,iY,iW,iH)
     {
         
         

@@ -43,7 +43,7 @@ void ship::collide(gameobject *go)
 
 void ship::destroy()
 {
-    c->remove(this);
+    G_Collider->remove(this);
     this->~ship();
     
 }

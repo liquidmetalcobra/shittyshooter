@@ -24,8 +24,7 @@ public:
     }
     ~LevelLoader()
     {
-        delete c;
-        delete handler;
+     
     }
     
     void init();
@@ -40,7 +39,6 @@ private:
     std::vector<Level*> levels;
     int currentLevel;
     
-    collider* c;
     GameObjectHandler *handler;
     
 };

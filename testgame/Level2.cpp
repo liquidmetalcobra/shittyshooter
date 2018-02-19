@@ -21,9 +21,9 @@ void Level2::init()
 void Level2::load(PlayerShip *ps)
 {
     
-    handler->empty();
-     c->empty(COLLISION_CLASS_SHIP);
-    c->empty(COLLISION_CLASS_BULLET);
+    G_Handler->empty();
+     G_Collider->empty(COLLISION_CLASS_SHIP);
+    G_Collider->empty(COLLISION_CLASS_BULLET);
     
     
     float bouncer_x = G_SCREEN_W / 2.0 - G_BOUNCER_SIZE / 2.0;
@@ -31,44 +31,44 @@ void Level2::load(PlayerShip *ps)
     
     if (ps == NULL)
     {
-        s = new PlayerShip(bouncer_x,bouncer_y,G_BOUNCER_SIZE+10,G_BOUNCER_SIZE,c);
+        s = new PlayerShip(bouncer_x,bouncer_y,G_BOUNCER_SIZE+10,G_BOUNCER_SIZE);
     }
     else
     {
         s = ps;
-        c->add(s, COLLISION_CLASS_SHIP);
+        G_Collider->add(s, COLLISION_CLASS_SHIP);
         
     }
     
     HealthBar *hp = new HealthBar(20,20,400,100,s,&s->hp);
-    enemyShip *e = new enemyShip(G_SCREEN_W-20,G_SCREEN_H/2,"witch",c);
-    enemyShip *e2 = new enemyShip(G_SCREEN_W-20,G_SCREEN_H/3,"witch",c);
-    enemyShip *e3 = new enemyShip(G_SCREEN_W-20,G_SCREEN_H*2/3,"witch",c);
+    enemyShip *e = new enemyShip(G_SCREEN_W-20,G_SCREEN_H/2,"witch");
+    enemyShip *e2 = new enemyShip(G_SCREEN_W-20,G_SCREEN_H/3,"witch");
+    enemyShip *e3 = new enemyShip(G_SCREEN_W-20,G_SCREEN_H*2/3,"witch");
     
-    handler->add(s);
-    handler->add(e);
-    handler->add(e2);
-    handler->add(e3);
-    handler->add(hp);
+    G_Handler->add(s);
+    G_Handler->add(e);
+    G_Handler->add(e2);
+    G_Handler->add(e3);
+    G_Handler->add(hp);
     
 }
 void Level2::draw()
 {
-    handler->draw();
+    G_Handler->draw();
 }
 
 
 void Level2::update()
 {
-    handler->update();
-    c->update();
+    G_Handler->update();
+    G_Collider->update();
     
     if(s->hp <= 0)
     {
         nextLevel = 0;
         levelComplete = true;
     }
-    if (c->getSize(COLLISION_CLASS_SHIP) == 1)
+    if (G_Collider->getSize(COLLISION_CLASS_SHIP) == 1)
     {
         nextLevel = 0;
         levelComplete = true;

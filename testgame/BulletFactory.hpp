@@ -13,25 +13,25 @@
 class BulletFactory {
 public:
     
-    BulletFactory(collider *newCollider)
+    BulletFactory()
     {
-        c = newCollider;
-        
-        
         count = 0;
     }
     ~BulletFactory()
     {
     //    std::cout << "factory dying\n\n";
         for (int i = 0; i < count; i++)
+        {
+            G_Collider->remove(bullets[i]);
             delete bullets[i];
+        }
     }
     
     void generateBullet(int x, int y, int xVel, int yVel, int id);
     void update();
     void draw();
 private:
-    collider *c;
+    
     bullet* bullets[10];
     int count;
 };

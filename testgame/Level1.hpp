@@ -23,7 +23,7 @@ using namespace std;
 
 class Level1 : public Level{
 public:
-    Level1(collider *c, GameObjectHandler *handler, int level) : Level(c, handler)
+    Level1(int level) : Level()
     {
         
         

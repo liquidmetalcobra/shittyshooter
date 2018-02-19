@@ -15,7 +15,7 @@ void MainMenu::init()
     
     levelID = 0;
     nextLevel = 0;
-    handler->add(but);
+    G_Handler->add(but);
     
     
     s = NULL;
@@ -25,21 +25,21 @@ void MainMenu::init()
 }
 void MainMenu::load(PlayerShip *ps)
 {
-    handler->empty();
-    c->empty(COLLISION_CLASS_SHIP);
-    c->empty(COLLISION_CLASS_BULLET);
+    G_Handler->empty();
+    G_Collider->empty(COLLISION_CLASS_SHIP);
+    G_Collider->empty(COLLISION_CLASS_BULLET);
     
-    handler->add(but);
+    G_Handler->add(but);
 }
 void MainMenu::draw()
 {
-    handler->draw();
+    G_Handler->draw();
 }
 
 
 void MainMenu::update()
 {
-    handler->update();
+    G_Handler->update();
 }
 
 void MainMenu::handleKeyboardEvent(ALLEGRO_EVENT ev)

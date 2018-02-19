@@ -46,16 +46,16 @@ void Level1::load(PlayerShip *ps)
     float bouncer_y = G_SCREEN_H / 2.0 - G_BOUNCER_SIZE / 2.0;
     currentWave = 1;
     nextLevel = defaultNextLevel;
-    handler->empty();
-    c->empty(COLLISION_CLASS_SHIP);
-    c->empty(COLLISION_CLASS_BULLET);
+    G_Handler->empty();
+    G_Collider->empty(COLLISION_CLASS_SHIP);
+    G_Collider->empty(COLLISION_CLASS_BULLET);
     
     if (ps == NULL)
-        s = new PlayerShip(bouncer_x,bouncer_y,G_BOUNCER_SIZE+10,G_BOUNCER_SIZE,c);
+        s = new PlayerShip(bouncer_x,bouncer_y,G_BOUNCER_SIZE+10,G_BOUNCER_SIZE);
     else
     {
         s = ps;
-        c->add(s, COLLISION_CLASS_SHIP);
+        G_Collider->add(s, COLLISION_CLASS_SHIP);
     }
     
     
@@ -64,9 +64,9 @@ void Level1::load(PlayerShip *ps)
     
     loadWave(currentWave);
     
-    handler->add(s);
+    G_Handler->add(s);
     
-    handler->add(hp);
+    G_Handler->add(hp);
 
 }
 
@@ -95,8 +95,8 @@ bool Level1::loadWave(int waveID)
                 
                 float y = enemy["iy"].cast<float>();
                 string name = enemy["name"].cast<string>();
-                enemyShip *e = new enemyShip(G_SCREEN_W*x/100,G_SCREEN_H*y/100,name,c);
-                handler->add(e);
+                enemyShip *e = new enemyShip(G_SCREEN_W*x/100,G_SCREEN_H*y/100,name);
+                G_Handler->add(e);
             }
             
             fprintf(stderr, "%s\n", lua_tostring(LevelState, -1));
@@ -106,24 +106,24 @@ bool Level1::loadWave(int waveID)
             return false;
         }
     }
-    PowerUp *p = new PowerUp(700,500,-5,5,-1,c);
-    handler->add(p);
+    PowerUp *p = new PowerUp(700,500,-5,5,-1);
+    G_Handler->add(p);
     return true;
 }
 void Level1::draw()
 {
-    handler->draw();
+    G_Handler->draw();
 }
 
 
 void Level1::update()
 {
-    handler->update();
-    c->update();
+    G_Handler->update();
+    G_Collider->update();
     
     if(s->hp <= 0)
         nextLevel = 0;
-    if (c->getSize(COLLISION_CLASS_SHIP) == 1)
+    if (G_Collider->getSize(COLLISION_CLASS_SHIP) == 1)
     {
         currentWave+=1;
         loadWave(currentWave);

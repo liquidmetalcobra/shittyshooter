@@ -10,13 +10,13 @@
 void LevelLoader::init()
 {
     
-    c = new collider();
-    handler = new GameObjectHandler();
+    
+    
     currentLevel = 0;
-    MainMenu *m = new MainMenu(c,handler);
-    Level1 *l1 = new Level1(c,handler,1);
-    Level1 *l2 = new Level1(c,handler,2);
-    Level1 *l3 = new Level1(c,handler,3);
+    MainMenu *m = new MainMenu();
+    Level1 *l1 = new Level1(1);
+    Level1 *l2 = new Level1(2);
+    Level1 *l3 = new Level1(3);
     
     levels.push_back(m);
     levels.push_back(l1);

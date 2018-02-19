@@ -10,13 +10,17 @@
 #include <iostream>
 #include "globals.h"
 #include "gameobject.hpp"
+//#include "Collider.hpp"
 #include <vector>
 
+#define G_Handler GameObjectHandler::instance()
 
 class GameObjectHandler
 {
     
-public:
+
+    
+    static GameObjectHandler *handler;
     GameObjectHandler()
     {
         
@@ -25,6 +29,15 @@ public:
     {
        // objects.clear();
     }
+    
+public:
+    static GameObjectHandler *instance()
+    {
+        if (!handler)
+            handler = new GameObjectHandler();
+        return handler;
+    }
+    
     
     void add(gameobject* go);
     void remove(gameobject * go);

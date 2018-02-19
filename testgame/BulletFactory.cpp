@@ -13,7 +13,7 @@ void BulletFactory::generateBullet(int x, int y, int xVel, int yVel, int id)
     
     if (count < 10)
     {
-        bullet *b = new bullet(x,y,xVel,yVel,id,c);
+        bullet *b = new bullet(x,y,xVel,yVel,id);
         bullets[count] = b;
         count++;
     }

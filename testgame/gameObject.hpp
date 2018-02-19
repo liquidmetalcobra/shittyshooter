@@ -21,6 +21,7 @@ public:
         this->y = 200;
         this->size = 100;
         this->id = 0;
+        //collisionClasses = COLLISION_CLASS_NONE;
         markForDeath = false;
     };
     
@@ -44,12 +45,17 @@ public:
     int getID() { return id; }
     int getSize() { return this->size; }
     
+    collisionClasses getCollisionClass() { return collisionClass; }
+    
     void setX(float newX) { x = newX; }
     void setY(float newY) { y = newY; }
     void setID(float newID) { id = newID; }
     void setSize(int newSize) { size = newSize; }
+    void setCollisionClass(collisionClasses newCollisionClass) { collisionClass = newCollisionClass; }
     
     bool markForDeath;
+    
+    
     
 protected:
     float x;
@@ -59,5 +65,6 @@ protected:
     int size;
     int id;
     int resetCount;
+    collisionClasses collisionClass;
     
 };

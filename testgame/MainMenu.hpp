@@ -20,13 +20,12 @@ using namespace std;
 
 class MainMenu : public Level{
 public:
-    MainMenu(collider *c, GameObjectHandler *handler) : Level(c, handler)
+    MainMenu() : Level()
     {
         init();
     }
     ~MainMenu()
     {
-        delete handler;
     }
     void init();
     void draw();

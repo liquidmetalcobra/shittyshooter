@@ -7,6 +7,8 @@
 //
 
 #include "GameObjectHandler.hpp"
+
+GameObjectHandler *GameObjectHandler::handler = 0;
 void GameObjectHandler::add(gameobject* a)
 {
     objects.push_back(a);

@@ -15,6 +15,7 @@ extern "C" {
 #include <unistd.h>
 #include "LuaBridge/LuaBridge.h"
 
+enum collisionClasses { COLLISION_CLASS_NONE, COLLISION_CLASS_SHIP, COLLISION_CLASS_BULLET, COLLISION_CLASS_POWERUP};
 
 #define G_FPS GlobalConfig::instance()->FPS()
 #define G_SCREEN_W GlobalConfig::instance()->SCREEN_W()
