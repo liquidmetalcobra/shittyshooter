@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D90CDFF21FDE039500F69FBE /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D90CDFF01FDE039500F69FBE /* Level.cpp */; };
-		D90CDFF51FDE07F200F69FBE /* Level1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D90CDFF31FDE07F200F69FBE /* Level1.cpp */; };
+		D90CDFF21FDE039500F69FBE /* BaseLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D90CDFF01FDE039500F69FBE /* BaseLevel.cpp */; };
+		D90CDFF51FDE07F200F69FBE /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D90CDFF31FDE07F200F69FBE /* Level.cpp */; };
 		D90CDFF81FDE0B0300F69FBE /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D90CDFF61FDE0B0300F69FBE /* MainMenu.cpp */; };
 		D90CDFFC1FDE0BF100F69FBE /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D90CDFFA1FDE0BF100F69FBE /* Button.cpp */; };
 		D90CDFFF1FDE198F00F69FBE /* LevelLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D90CDFFD1FDE198F00F69FBE /* LevelLoader.cpp */; };
@@ -28,7 +28,6 @@
 		D994C2661F9D675C00D59377 /* GameObjectHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D994C2641F9D675C00D59377 /* GameObjectHandler.cpp */; };
 		D994C2691F9D731C00D59377 /* UIElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D994C2671F9D731C00D59377 /* UIElement.cpp */; };
 		D994C26C1F9D747700D59377 /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D994C26A1F9D747700D59377 /* HealthBar.cpp */; };
-		D9AB451B1FF2F62400A5EC83 /* Level2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9AB45191FF2F62400A5EC83 /* Level2.cpp */; };
 		D9AB451C1FF30BA800A5EC83 /* Allegro-5.0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E03C7A1F92B4CA00E5CB03 /* Allegro-5.0.framework */; };
 		D9AB451D1FF30BA800A5EC83 /* AllegroAcodec-5.0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E03C7B1F92B4CA00E5CB03 /* AllegroAcodec-5.0.framework */; };
 		D9AB451E1FF30BA800A5EC83 /* AllegroAudio-5.0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E03C7C1F92B4CA00E5CB03 /* AllegroAudio-5.0.framework */; };
@@ -78,10 +77,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D90CDFF01FDE039500F69FBE /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Level.cpp; sourceTree = "<group>"; };
-		D90CDFF11FDE039500F69FBE /* Level.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Level.hpp; sourceTree = "<group>"; };
-		D90CDFF31FDE07F200F69FBE /* Level1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Level1.cpp; sourceTree = "<group>"; };
-		D90CDFF41FDE07F200F69FBE /* Level1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Level1.hpp; sourceTree = "<group>"; };
+		D90CDFF01FDE039500F69FBE /* BaseLevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseLevel.cpp; sourceTree = "<group>"; };
+		D90CDFF11FDE039500F69FBE /* BaseLevel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BaseLevel.hpp; sourceTree = "<group>"; };
+		D90CDFF31FDE07F200F69FBE /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Level.cpp; sourceTree = "<group>"; };
+		D90CDFF41FDE07F200F69FBE /* Level.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Level.hpp; sourceTree = "<group>"; };
 		D90CDFF61FDE0B0300F69FBE /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
 		D90CDFF71FDE0B0300F69FBE /* MainMenu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MainMenu.hpp; sourceTree = "<group>"; };
 		D90CDFFA1FDE0BF100F69FBE /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
@@ -117,8 +116,6 @@
 		D994C2681F9D731C00D59377 /* UIElement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UIElement.hpp; sourceTree = "<group>"; };
 		D994C26A1F9D747700D59377 /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthBar.cpp; sourceTree = "<group>"; };
 		D994C26B1F9D747700D59377 /* HealthBar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HealthBar.hpp; sourceTree = "<group>"; };
-		D9AB45191FF2F62400A5EC83 /* Level2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Level2.cpp; sourceTree = "<group>"; };
-		D9AB451A1FF2F62400A5EC83 /* Level2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Level2.hpp; sourceTree = "<group>"; };
 		D9E03C661F92B3EF00E5CB03 /* testgame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testgame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E03C6D1F92B3EF00E5CB03 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D9E03C7A1F92B4CA00E5CB03 /* Allegro-5.0.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Allegro-5.0.framework"; path = "../../../../../Library/Frameworks/Allegro-5.0.framework"; sourceTree = "<group>"; };
@@ -161,12 +158,10 @@
 			children = (
 				D90CDFFD1FDE198F00F69FBE /* LevelLoader.cpp */,
 				D90CDFFE1FDE198F00F69FBE /* LevelLoader.hpp */,
-				D90CDFF01FDE039500F69FBE /* Level.cpp */,
-				D90CDFF11FDE039500F69FBE /* Level.hpp */,
-				D90CDFF31FDE07F200F69FBE /* Level1.cpp */,
-				D90CDFF41FDE07F200F69FBE /* Level1.hpp */,
-				D9AB45191FF2F62400A5EC83 /* Level2.cpp */,
-				D9AB451A1FF2F62400A5EC83 /* Level2.hpp */,
+				D90CDFF01FDE039500F69FBE /* BaseLevel.cpp */,
+				D90CDFF11FDE039500F69FBE /* BaseLevel.hpp */,
+				D90CDFF31FDE07F200F69FBE /* Level.cpp */,
+				D90CDFF41FDE07F200F69FBE /* Level.hpp */,
 				D90CDFF61FDE0B0300F69FBE /* MainMenu.cpp */,
 				D90CDFF71FDE0B0300F69FBE /* MainMenu.hpp */,
 			);
@@ -353,7 +348,6 @@
 				D90CDFFF1FDE198F00F69FBE /* LevelLoader.cpp in Sources */,
 				D994C2631F9D5E9800D59377 /* PlayerShip.cpp in Sources */,
 				D994C26C1F9D747700D59377 /* HealthBar.cpp in Sources */,
-				D9AB451B1FF2F62400A5EC83 /* Level2.cpp in Sources */,
 				D994C2491F92B9AF00D59377 /* gameObject.cpp in Sources */,
 				D994C25D1F92DB1800D59377 /* enemyShip.cpp in Sources */,
 				D994C2541F92C64900D59377 /* keyboardmanager.cpp in Sources */,
@@ -362,11 +356,11 @@
 				D994C2661F9D675C00D59377 /* GameObjectHandler.cpp in Sources */,
 				D994C2511F92C53300D59377 /* globals.cpp in Sources */,
 				D91E49F0203129C900AAE0FC /* PowerUp.cpp in Sources */,
-				D90CDFF21FDE039500F69FBE /* Level.cpp in Sources */,
+				D90CDFF21FDE039500F69FBE /* BaseLevel.cpp in Sources */,
 				D994C2601F9D41E300D59377 /* Collider.cpp in Sources */,
 				D994C2461F92B71700D59377 /* ship.cpp in Sources */,
 				D994C24C1F92B9B500D59377 /* bullet.cpp in Sources */,
-				D90CDFF51FDE07F200F69FBE /* Level1.cpp in Sources */,
+				D90CDFF51FDE07F200F69FBE /* Level.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

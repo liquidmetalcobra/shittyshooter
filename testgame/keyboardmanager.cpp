@@ -12,6 +12,7 @@
 
 void updateKeyboardKeyState(int keyCode, bool state)
 {
+    
     switch(keyCode) {
         case ALLEGRO_KEY_UP:
             key[KEY_UP] = state;

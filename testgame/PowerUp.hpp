@@ -12,7 +12,7 @@
 #include "Collider.hpp"
 class PowerUp: public gameobject {
 public:
-    PowerUp(int iX, int iY, int xVel, int yVel, int iID)
+    PowerUp(int iX, int iY, int xVel, int yVel)
     {
         collisionClass = COLLISION_CLASS_POWERUP;
         timeToLive = 500;
@@ -20,7 +20,7 @@ public:
         y = iY;
         vel[0] = xVel;
         vel[1] = yVel;
-        id = iID;
+        id = GAME_OBJECT_ID_POWERUP;
         
         w = h = 10;
         b = al_create_bitmap(10, 10);

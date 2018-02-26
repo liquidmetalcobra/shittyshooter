@@ -21,6 +21,7 @@ public:
         this->y = 200;
         this->size = 100;
         this->id = 0;
+        visible = true;
         collisionClass = COLLISION_CLASS_NONE;
         markForDeath = false;
     };
@@ -42,6 +43,8 @@ public:
     float getWidth() { return w; }
     float getHeight() { return h; }
     
+    bool getVisible() { return visible; }
+    
     int getID() { return id; }
     int getSize() { return this->size; }
     
@@ -50,6 +53,7 @@ public:
     void setX(float newX) { x = newX; }
     void setY(float newY) { y = newY; }
     void setID(float newID) { id = newID; }
+    void setVisible(bool newVisible) { visible = newVisible; }
     void setSize(int newSize) { size = newSize; }
     void setCollisionClass(collisionClasses newCollisionClass) { collisionClass = newCollisionClass; }
     
@@ -58,6 +62,7 @@ public:
     
     
 protected:
+    bool visible;
     float x;
     float y;
     int w;

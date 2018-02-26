@@ -9,10 +9,10 @@
 #include "allegro5/allegro.h"
 #include "allegro5/allegro_image.h"
 #include "globals.h"
-#include "Level.hpp"
+#include "BaseLevel.hpp"
 #include "MainMenu.hpp"
-#include "Level1.hpp"
-#include "Level2.hpp"
+#include "Level.hpp"
+
 #include <vector>
 
 class LevelLoader {
@@ -36,7 +36,7 @@ public:
     
     
 private:
-    std::vector<Level*> levels;
+    std::vector<BaseLevel*> levels;
     int currentLevel;
     
     GameObjectHandler *handler;

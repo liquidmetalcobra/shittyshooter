@@ -9,7 +9,7 @@
 #include "PowerUp.hpp"
 void PowerUp::collide(gameobject *go)
 {
-    if (go->getID() != getID())
+    if (go->getID() == GAME_OBJECT_ID_PLAYERSHIP)
     {
         //     std::cout << "boom";
         markForDeath = true;

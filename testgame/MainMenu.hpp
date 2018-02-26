@@ -12,15 +12,15 @@
 #include "allegro5/allegro.h"
 #include "allegro5/allegro_image.h"
 #include "globals.h"
-#include "Level.hpp"
+#include "BaseLevel.hpp"
 #include "GameObjectHandler.hpp"
 
 #include "Button.hpp"
 using namespace std;
 
-class MainMenu : public Level{
+class MainMenu : public BaseLevel{
 public:
-    MainMenu() : Level()
+    MainMenu() : BaseLevel()
     {
         init();
     }

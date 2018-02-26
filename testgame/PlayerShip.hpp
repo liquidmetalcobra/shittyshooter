@@ -21,7 +21,7 @@ public:
         
         b = al_load_bitmap("playership.png");
       //  al_set_target_bitmap(b);
-        
+        id = GAME_OBJECT_ID_PLAYERSHIP;
         s_w = 224;
         s_h = 154;
         hp = 100;

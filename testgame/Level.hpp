@@ -11,44 +11,48 @@
 
 #include "allegro5/allegro.h"
 #include "allegro5/allegro_image.h"
-#include "PlayerShip.hpp"
 #include "globals.h"
+#include "BaseLevel.hpp"
+#include "PowerUp.hpp"
+#include "enemyShip.hpp"
 #include "Collider.hpp"
 #include "GameObjectHandler.hpp"
+#include "HealthBar.hpp"
 
 using namespace std;
 
-class Level {
+class Level : public BaseLevel{
 public:
-    Level()
+    Level(int level) : BaseLevel()
     {
-        levelComplete = false;
+        
+        
+        
+        init(level);
     }
     ~Level()
     {
-        delete s;
-        
+      
+       
     }
-    virtual void init() = 0;
-    virtual void draw() = 0;
-    virtual void load(PlayerShip *ps) = 0;
-    virtual void update() = 0;
-    virtual void handleKeyboardEvent ( ALLEGRO_EVENT ev) = 0;
-    virtual void handleMouseEvent ( ALLEGRO_EVENT ev) = 0;
-    
-    int GetNextLevel() { return nextLevel; };
-    void SetNextLevel(int newNextLevel) { nextLevel = newNextLevel; };
-    bool levelComplete;
-    PlayerShip *s; 
+    void init();
+    void init(int level);
+    void draw();
+    void update();
+    void load(PlayerShip *ps);
+    void handleKeyboardEvent ( ALLEGRO_EVENT ev);
+    void handleMouseEvent ( ALLEGRO_EVENT ev);
+    bool loadWave(int waveID);
 protected:
-    int nextLevel;
-    int levelID;
-    
-    
+   
+    int numberOfWaves;
+    int currentWave;
+    int defaultNextLevel;
+    lua_State* LevelState;
     
 };
 
-
-
-
-
+    
+    
+    
+    

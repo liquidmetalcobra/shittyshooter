@@ -13,6 +13,7 @@
 #include "BulletFactory.hpp"
 #include "Collider.hpp"
 #include "ship.hpp"
+#include "PowerUp.hpp"
 class enemyShip : public ship {
 public:
     

@@ -59,11 +59,16 @@ bool enemyShip::init(string scriptName)
 }
 void enemyShip::collide(gameobject *go)
 {
-    if (go->getID() != getID())
+    if (go->getID() != getID() && go->getID() >= 0)
     {
         hp-=10;
         if (hp<=0)
+        {
+            PowerUp *p = new PowerUp(x,y,-5,5);
+            G_Handler->add(p);
+            
             markForDeath = true;
+        }
     }
 }
 

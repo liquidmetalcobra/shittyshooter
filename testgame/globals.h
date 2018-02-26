@@ -16,6 +16,7 @@ extern "C" {
 #include "LuaBridge/LuaBridge.h"
 
 enum collisionClasses { COLLISION_CLASS_NONE, COLLISION_CLASS_SHIP, COLLISION_CLASS_BULLET, COLLISION_CLASS_POWERUP};
+enum GameObjectID { GAME_OBJECT_ID_POWERUP = -1, GAME_OBJECT_ID_PLAYERSHIP, GAME_OBJECT_ID_ENEMYSHIP};
 
 #define G_FPS GlobalConfig::instance()->FPS()
 #define G_SCREEN_W GlobalConfig::instance()->SCREEN_W()

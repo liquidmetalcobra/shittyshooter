@@ -14,9 +14,9 @@ void LevelLoader::init()
     
     currentLevel = 0;
     MainMenu *m = new MainMenu();
-    Level1 *l1 = new Level1(1);
-    Level1 *l2 = new Level1(2);
-    Level1 *l3 = new Level1(3);
+    Level *l1 = new Level(1);
+    Level *l2 = new Level(2);
+    Level *l3 = new Level(3);
     
     levels.push_back(m);
     levels.push_back(l1);
