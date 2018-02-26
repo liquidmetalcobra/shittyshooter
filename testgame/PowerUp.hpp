@@ -12,17 +12,17 @@
 #include "Collider.hpp"
 class PowerUp: public gameobject {
 public:
-    PowerUp(int iX, int iY, int xVel, int yVel)
+    PowerUp(Vector_2D loc, Vector_2D vel)
     {
         collisionClass = COLLISION_CLASS_POWERUP;
         timeToLive = 500;
-        x = iX;
-        y = iY;
-        vel[0] = xVel;
-        vel[1] = yVel;
+        
+        location = loc;
+        velocity = vel;
+        size = Vector_2D(10,10);
         id = GAME_OBJECT_ID_POWERUP;
         
-        w = h = 10;
+        
         b = al_create_bitmap(10, 10);
         
         al_set_target_bitmap(b);
@@ -46,5 +46,5 @@ public:
 private:
     ALLEGRO_BITMAP *b;
     int timeToLive;
-    int vel[2];
+    Vector_2D velocity;
 };

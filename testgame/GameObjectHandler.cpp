@@ -30,6 +30,10 @@ void GameObjectHandler::update()
     {
         if (objects[i]->markForDeath)
         {
+            if (objects[i]->getParent())
+            {
+                objects[i]->getParent()->removeChild(objects[i]);
+            }
             objects[i]->destroy();
             objects[i] = NULL;
             objects.erase(objects.begin()+i);

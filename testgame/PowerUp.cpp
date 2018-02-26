@@ -17,12 +17,14 @@ void PowerUp::collide(gameobject *go)
 }
 void PowerUp::update()
 {
-    x+=vel[0];
-    y+=vel[1];
+    location = Add2DV(location, velocity);
+    int x = location.x;
+    int y = location.y;
+    
     if (x < 0 || x > G_SCREEN_W)
-        vel[0] *= -1;
+        velocity.x *= -1;
     if (y < 0 || y > G_SCREEN_H)
-        vel[1] *= -1;
+        velocity.y *= -1;
     
     timeToLive--;
     if (timeToLive <= 0)
@@ -34,6 +36,9 @@ void PowerUp::init()
 }
 void PowerUp::draw()
 {
+    int x = location.x;
+    int y = location.y;
+    
     if (timeToLive > 100 || timeToLive%10 < 5)
         al_draw_bitmap(b, x, y, 0);
 }

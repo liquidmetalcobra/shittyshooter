@@ -18,11 +18,10 @@ class gameobject
 public:
     gameobject()
     {
-        this->x = 200;
-        this->y = 200;
         
         
         this->id = 0;
+        parent = NULL;
         visible = true;
         collisionClass = COLLISION_CLASS_NONE;
         markForDeath = false;
@@ -47,8 +46,10 @@ public:
     
     bool getVisible() { return visible; }
     
-    int getID() { return id; }
+    gameobject * getParent() { return parent; }
     
+    int getID() { return id; }
+    unsigned long getNumberOfChildren() { return _children.size(); }
     
     collisionClasses getCollisionClass() { return collisionClass; }
     
@@ -59,18 +60,21 @@ public:
     
     void setCollisionClass(collisionClasses newCollisionClass) { collisionClass = newCollisionClass; }
     
+    void Transform(Vector_2D delta);
+    
     bool markForDeath;
     
+    void removeAllChildren();
     void addChild(gameobject * newChild);
+    void removeChild(gameobject *child);
+    bool isParentOf(gameobject * child);
+    bool isChildOf(gameobject * parent);
+    
     
 protected:
     bool visible;
-    float x;
-    float y;
     Vector_2D location;
     Vector_2D size;
-    int w;
-    int h;
     
     int id;
     int resetCount;

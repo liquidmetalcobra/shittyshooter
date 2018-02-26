@@ -64,7 +64,7 @@ void enemyShip::collide(gameobject *go)
         hp-=10;
         if (hp<=0)
         {
-            PowerUp *p = new PowerUp(location.x,location.y,-5,5);
+            PowerUp *p = new PowerUp(location,Vector_2D(-5,5));
             G_Handler->add(p);
             
             markForDeath = true;

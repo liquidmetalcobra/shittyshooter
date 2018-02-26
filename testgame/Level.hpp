@@ -15,10 +15,11 @@
 #include "BaseLevel.hpp"
 #include "PowerUp.hpp"
 #include "enemyShip.hpp"
+#include "HelperShip.hpp"
 #include "Collider.hpp"
 #include "GameObjectHandler.hpp"
 #include "HealthBar.hpp"
-
+#include "EmptyGameObject.hpp"
 using namespace std;
 
 class Level : public BaseLevel{
@@ -48,6 +49,7 @@ protected:
     int numberOfWaves;
     int currentWave;
     int defaultNextLevel;
+    EmptyGameObject *swarmContainer;
     lua_State* LevelState;
     
 };

@@ -15,6 +15,8 @@
 		D91E49F0203129C900AAE0FC /* PowerUp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D91E49EE203129C900AAE0FC /* PowerUp.cpp */; };
 		D9241BFE1FF30D0C00268430 /* playership.png in Resources */ = {isa = PBXBuildFile; fileRef = D9241BFD1FF30D0C00268430 /* playership.png */; };
 		D94378F120438F7000FE0AC6 /* VectorMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94378EF20438F7000FE0AC6 /* VectorMath.cpp */; };
+		D94378F42043A36D00FE0AC6 /* HelperShip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94378F22043A36D00FE0AC6 /* HelperShip.cpp */; };
+		D94378F72043AF1A00FE0AC6 /* EmptyGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94378F52043AF1A00FE0AC6 /* EmptyGameObject.cpp */; };
 		D94D0CE220155B6800BD985E /* LuaBridge in Resources */ = {isa = PBXBuildFile; fileRef = D94D0CE120155B6800BD985E /* LuaBridge */; };
 		D94D0CE9201E9D0A00BD985E /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = D94D0CE8201E9D0A00BD985E /* Scripts */; };
 		D994C2461F92B71700D59377 /* ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D994C2441F92B71700D59377 /* ship.cpp */; };
@@ -93,6 +95,10 @@
 		D9241BFD1FF30D0C00268430 /* playership.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playership.png; path = Resources/playership.png; sourceTree = "<group>"; };
 		D94378EF20438F7000FE0AC6 /* VectorMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VectorMath.cpp; sourceTree = "<group>"; };
 		D94378F020438F7000FE0AC6 /* VectorMath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VectorMath.hpp; sourceTree = "<group>"; };
+		D94378F22043A36D00FE0AC6 /* HelperShip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelperShip.cpp; sourceTree = "<group>"; };
+		D94378F32043A36D00FE0AC6 /* HelperShip.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HelperShip.hpp; sourceTree = "<group>"; };
+		D94378F52043AF1A00FE0AC6 /* EmptyGameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EmptyGameObject.cpp; sourceTree = "<group>"; };
+		D94378F62043AF1A00FE0AC6 /* EmptyGameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EmptyGameObject.hpp; sourceTree = "<group>"; };
 		D94D0CE120155B6800BD985E /* LuaBridge */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LuaBridge; sourceTree = "<group>"; };
 		D94D0CE8201E9D0A00BD985E /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = Resources/Scripts; sourceTree = "<group>"; };
 		D994C2441F92B71700D59377 /* ship.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ship.cpp; path = ../ship.cpp; sourceTree = "<group>"; };
@@ -243,6 +249,8 @@
 				D994C2451F92B71700D59377 /* ship.hpp */,
 				D994C2611F9D5E9800D59377 /* PlayerShip.cpp */,
 				D994C2621F9D5E9800D59377 /* PlayerShip.hpp */,
+				D94378F22043A36D00FE0AC6 /* HelperShip.cpp */,
+				D94378F32043A36D00FE0AC6 /* HelperShip.hpp */,
 				D994C2521F92C64900D59377 /* keyboardmanager.cpp */,
 				D994C2531F92C64900D59377 /* keyboardmanager.hpp */,
 				D91E49EE203129C900AAE0FC /* PowerUp.cpp */,
@@ -266,6 +274,8 @@
 				D994C2651F9D675C00D59377 /* GameObjectHandler.hpp */,
 				D994C2471F92B9AF00D59377 /* gameObject.cpp */,
 				D994C2481F92B9AF00D59377 /* gameObject.hpp */,
+				D94378F52043AF1A00FE0AC6 /* EmptyGameObject.cpp */,
+				D94378F62043AF1A00FE0AC6 /* EmptyGameObject.hpp */,
 				D994C25E1F9D41E300D59377 /* Collider.cpp */,
 				D994C25F1F9D41E300D59377 /* Collider.hpp */,
 				D94378EF20438F7000FE0AC6 /* VectorMath.cpp */,
@@ -359,12 +369,14 @@
 				D90CDFF81FDE0B0300F69FBE /* MainMenu.cpp in Sources */,
 				D994C2691F9D731C00D59377 /* UIElement.cpp in Sources */,
 				D994C2661F9D675C00D59377 /* GameObjectHandler.cpp in Sources */,
+				D94378F72043AF1A00FE0AC6 /* EmptyGameObject.cpp in Sources */,
 				D994C2511F92C53300D59377 /* globals.cpp in Sources */,
 				D91E49F0203129C900AAE0FC /* PowerUp.cpp in Sources */,
 				D90CDFF21FDE039500F69FBE /* BaseLevel.cpp in Sources */,
 				D994C2601F9D41E300D59377 /* Collider.cpp in Sources */,
 				D94378F120438F7000FE0AC6 /* VectorMath.cpp in Sources */,
 				D994C2461F92B71700D59377 /* ship.cpp in Sources */,
+				D94378F42043A36D00FE0AC6 /* HelperShip.cpp in Sources */,
 				D994C24C1F92B9B500D59377 /* bullet.cpp in Sources */,
 				D90CDFF51FDE07F200F69FBE /* Level.cpp in Sources */,
 			);

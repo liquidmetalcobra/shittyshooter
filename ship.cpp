@@ -19,9 +19,9 @@ void ship::move(Vector_2D delta)
  */
 void ship::move(int x, int y)
 {
-    //printf("Moving by (%d, %d)",dX,dY);
     
-    location = Add2DV(location,Vector_2D(x,y));
+    
+    Transform(Vector_2D(x,y));
     
 }
 
