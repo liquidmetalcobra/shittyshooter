@@ -49,7 +49,7 @@ bool enemyShip::init(string scriptName)
    
     count = 0;
     
-    b = al_create_bitmap(w, h);
+    b = al_create_bitmap(size.x, size.y);
     
     al_set_target_bitmap(b);
     al_clear_to_color(al_map_rgb(55, 10, 123));
@@ -64,7 +64,7 @@ void enemyShip::collide(gameobject *go)
         hp-=10;
         if (hp<=0)
         {
-            PowerUp *p = new PowerUp(x,y,-5,5);
+            PowerUp *p = new PowerUp(location.x,location.y,-5,5);
             G_Handler->add(p);
             
             markForDeath = true;
@@ -80,7 +80,7 @@ void enemyShip::update()
     
     if (count > firerate)
     {
-        bulletGen->generateBullet(x, y, -10, 0, getID());
+        bulletGen->generateBullet(location, Vector_2D(-10, 0), getID());
         count = 0;
     }
     else

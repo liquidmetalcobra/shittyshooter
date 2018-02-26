@@ -11,25 +11,30 @@
 
 void PlayerShip::update()
 {
+    printf("updagint player ship\n");
    // printf("hi");
+    int x = location.x;
+    int y = location.y;
+    int w = size.x;
+    int h = size.y;
     if(key[KEY_UP] && y >= 4.0) {
-        
         move(0,-4);
+        //move(Vector_2D(0,-4));
     }
     
     if(key[KEY_DOWN] && y <= G_SCREEN_H - h - 4.0) {
-        
         move(0,4);
+        //move(Vector_2D(0,4));
     }
     
     if(key[KEY_LEFT] && x >= 4.0) {
-        
         move(-4,0);
+        //move(Vector_2D(-4,0));
     }
     
     if(key[KEY_RIGHT] && x <= G_SCREEN_W - w - 4.0) {
-        
         move(4,0);
+        //move(Vector_2D(4,0));
     }
     bulletGen->update();
     //fire();
@@ -37,7 +42,7 @@ void PlayerShip::update()
 
 void PlayerShip::fire()
 {
-     bulletGen->generateBullet(x+this->h, y+this->w/4, 10, 0, getID());
+     bulletGen->generateBullet(Vector_2D(location.x+size.x, location.y+size.y/4),Vector_2D(10,0), getID());
 }
 
 

@@ -17,7 +17,7 @@
 class enemyShip : public ship {
 public:
     
-    enemyShip(int iX, int iY,string scriptName) : ship(iX,iY,20,20)
+    enemyShip(Vector_2D loc,string scriptName) : ship(loc,Vector_2D(20,20))
     {
         
         updateFunc = nullptr;

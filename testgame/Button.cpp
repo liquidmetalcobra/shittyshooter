@@ -18,8 +18,8 @@ void Button::init()
 }
 void Button::draw()
 {
-    al_draw_bitmap(background, x, y, 0);
-    al_draw_bitmap(b,x, y, 0);
+    al_draw_bitmap(background, location.x, location.y, 0);
+    al_draw_bitmap(b,location.x, location.y, 0);
     //al_draw_scaled_bitmap(b, 0, 0, w, h, x, y, w, h, 0);
 }
 void Button::destroy()
@@ -28,6 +28,10 @@ void Button::destroy()
 }
 bool Button::isButtonClicked(int mbX, int mbY)
 {
+    int x = location.x;
+    int y = location.y;
+    int w = size.x;
+    int h = size.y;
     if (mbX < x + w && mbX > x && mbY < y + h && mbY > y)
     {
         //buttonPressed();

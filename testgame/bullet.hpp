@@ -14,15 +14,14 @@
 
 class bullet: public gameobject {
 public:
-    bullet(int iX, int iY, int xVel, int yVel, int iID)
+    bullet(Vector_2D loc, Vector_2D vel, int iID)
     {
         collisionClass = COLLISION_CLASS_BULLET;
-        x = iX;
-        y = iY;
-        vel[0] = xVel;
-        vel[1] = yVel;
+        location = loc;
+        velocity = vel;
+        size = Vector_2D(10,10);
         id = iID;
-        w = h = 10;
+        
         b = al_create_bitmap(10, 10);
         
         al_set_target_bitmap(b);
@@ -45,5 +44,5 @@ public:
 private:
     ALLEGRO_BITMAP *b;
     
-    int vel[2];
+    Vector_2D velocity;;
 };

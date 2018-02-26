@@ -7,14 +7,21 @@
 //
 
 #include "ship.hpp"
+/*
 
-
-void ship::move(int dX, int dY)
+void ship::move(Vector_2D delta)
 {
     //printf("Moving by (%d, %d)",dX,dY);
     
-    x+=dX;
-    y+=dY;
+    location = Add2DV(location, delta);
+    
+}
+ */
+void ship::move(int x, int y)
+{
+    //printf("Moving by (%d, %d)",dX,dY);
+    
+    location = Add2DV(location,Vector_2D(x,y));
     
 }
 
@@ -30,7 +37,12 @@ void ship::fire()
 void ship::draw()
 {
     
-    al_draw_scaled_bitmap(b, 0, 0, s_w, s_h, x, y, this->w, this->h, 0);
+    int x = location.x;
+    int y = location.y;
+    int w = size.x;
+    int h = size.y;
+    
+    al_draw_scaled_bitmap(b, 0, 0, s_w, s_h, x, y, w, h, 0);
     bulletGen->draw();
 }
 void ship::collide(gameobject *go)

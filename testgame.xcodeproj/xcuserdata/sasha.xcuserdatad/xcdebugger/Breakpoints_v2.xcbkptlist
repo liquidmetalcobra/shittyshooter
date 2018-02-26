@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ship.hpp"
-            timestampString = "530411332.524653"
+            timestampString = "541300888.420036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "~ship()"
             landmarkType = "5">
          </BreakpointContent>
@@ -45,22 +45,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "9"
             endingLineNumber = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "testgame/UIElement.hpp"
-            timestampString = "530413099.542084"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "UIElement(int iX, int iY, int iW, int iH, gameobject * go)"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -107,7 +91,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "Button(int iX, int iY, int iW, int iH, void * callBack)"
+            landmarkName = "Button(Vector_2D loc, Vector_2D size, void * callBack)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -153,7 +137,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "PlayerShip(int iX, int iY, int iW, int iH)"
+            landmarkName = "PlayerShip(Vector_2D loc, Vector_2D siz)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -265,7 +249,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
-            landmarkName = "enemyShip(int iX, int iY,string scriptName)"
+            landmarkName = "enemyShip(Vector_2D loc,string scriptName)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -276,12 +260,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testgame/bullet.hpp"
-            timestampString = "540692307.850582"
+            timestampString = "541302112.282071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "bullet(int iX, int iY, int xVel, int yVel, int iID)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "bullet(Vector_2D loc, Vector_2D vel, int iID)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testgame/UIElement.hpp"
+            timestampString = "541300033.219431"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "UIElement(Vector_2D loc, Vector_2D siz, gameobject * go)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

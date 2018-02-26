@@ -12,3 +12,6 @@
 
 bool key[NUM_KEYS] = { false, false, false, false, false, false, false };
 GlobalConfig *GlobalConfig::g = 0;
+
+
+

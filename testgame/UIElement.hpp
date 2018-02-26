@@ -14,12 +14,10 @@ class UIElement : public gameobject
 {
 public:
     
-    UIElement(int iX, int iY, int iW, int iH, gameobject * go)
+    UIElement(Vector_2D loc, Vector_2D siz, gameobject * go)
     {
-        x = iX;
-        y = iY;
-        w = iW;
-        h = iH;
+        location = loc;
+        size = siz;
         object = go;
   
     }

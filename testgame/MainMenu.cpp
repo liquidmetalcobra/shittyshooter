@@ -9,8 +9,9 @@
 #include "MainMenu.hpp"
 void MainMenu::init()
 {
-    
-    but = new Button(50,50,100,100, NULL);
+    Vector_2D loc(50,50);
+    Vector_2D size(100,100);
+    but = new Button(loc,size, NULL);
     
     
     levelID = 0;

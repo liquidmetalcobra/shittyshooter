@@ -17,16 +17,16 @@ class Button : public UIElement
 {
     
 public:
-    Button(int iX, int iY, int iW, int iH, void * callBack) : UIElement(iX,iY,iW,iH,NULL)
+    Button(Vector_2D loc, Vector_2D size, void * callBack) : UIElement(loc,size,NULL)
     {
         //buttonPressed = (void *)callBack;
         
-        b = al_create_bitmap(w, h);
+        b = al_create_bitmap(size.x, size.y);
         al_set_target_bitmap(b);
         al_clear_to_color(al_map_rgb(255, 0, 0));
         
         
-        background = al_create_bitmap(w, h);
+        background = al_create_bitmap(size.x, size.y);
         al_set_target_bitmap(background);
         al_clear_to_color(al_map_rgb(255, 255, 255));
     }

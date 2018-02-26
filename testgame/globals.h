@@ -14,6 +14,7 @@ extern "C" {
 }
 #include <unistd.h>
 #include "LuaBridge/LuaBridge.h"
+#include "VectorMath.hpp"
 
 enum collisionClasses { COLLISION_CLASS_NONE, COLLISION_CLASS_SHIP, COLLISION_CLASS_BULLET, COLLISION_CLASS_POWERUP};
 enum GameObjectID { GAME_OBJECT_ID_POWERUP = -1, GAME_OBJECT_ID_PLAYERSHIP, GAME_OBJECT_ID_ENEMYSHIP};
@@ -31,6 +32,20 @@ const int NUM_KEYS = 7;
 enum MYKEYS {
     KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_SPACE, KEY_F, KEY_ESCAPE
 };
+
+struct VECTOR_2D {
+    int x;
+    int y;
+};
+
+struct VECTOR_3D {
+    int x;
+    int y;
+    int z;
+};
+typedef struct VECTOR_2D V2D;
+typedef struct VECTOR_3D V3D;
+
 
 
 

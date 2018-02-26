@@ -17,8 +17,10 @@ void bullet::collide(gameobject *go)
 }
 void bullet::update()
 {
-    x+=vel[0];
-    y+=vel[1];
+    location = Add2DV(location, velocity);
+    
+    int x = location.x;
+    int y = location.y;
     if (x < 0 || x > G_SCREEN_W || y < 0 || y > G_SCREEN_H)
         markForDeath = true;
 }
@@ -28,6 +30,9 @@ void bullet::init()
 }
 void bullet::draw()
 {
+    int x = location.x;
+    int y = location.y;
+    
     al_draw_bitmap(b, x, y, 0);
 }
 

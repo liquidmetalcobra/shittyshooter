@@ -38,7 +38,6 @@ int main(int argc, char **argv)
     cout << "main: global_ptr is " << G_FPS << '\n';
     
     
-    
     if(!al_init()) {
         fprintf(stderr, "failed to initialize allegro!\n");
         return -1;

@@ -15,7 +15,7 @@
 class PlayerShip : public ship
 {
 public:
-    PlayerShip(int iX, int iY, int iW, int iH) : ship(iX,iY,iW,iH)
+    PlayerShip(Vector_2D loc, Vector_2D siz) : ship(loc, siz)
     {
         
         

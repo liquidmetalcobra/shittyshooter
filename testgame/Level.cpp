@@ -51,15 +51,16 @@ void Level::load(PlayerShip *ps)
     G_Collider->empty(COLLISION_CLASS_BULLET);
     
     if (ps == NULL)
-        s = new PlayerShip(bouncer_x,bouncer_y,G_BOUNCER_SIZE+10,G_BOUNCER_SIZE);
+        s = new PlayerShip(Vector_2D(bouncer_x,bouncer_y),Vector_2D(G_BOUNCER_SIZE+10,G_BOUNCER_SIZE));
     else
     {
         s = ps;
         
     }
     
-    
-    HealthBar *hp = new HealthBar(20,20,400,100,s,&s->hp);
+    Vector_2D loc(20,20);
+    Vector_2D size(400,100);
+    HealthBar *hp = new HealthBar(loc,size,s,&s->hp);
     
     
     loadWave(currentWave);
@@ -95,7 +96,8 @@ bool Level::loadWave(int waveID)
                 
                 float y = enemy["iy"].cast<float>();
                 string name = enemy["name"].cast<string>();
-                enemyShip *e = new enemyShip(G_SCREEN_W*x/100,G_SCREEN_H*y/100,name);
+                Vector_2D loc(G_SCREEN_W*x/100,G_SCREEN_H*y/100);
+                enemyShip *e = new enemyShip(loc,name);
                 G_Handler->add(e);
             }
             
@@ -106,8 +108,11 @@ bool Level::loadWave(int waveID)
             return false;
         }
     }
+    
     PowerUp *p = new PowerUp(700,500,-5,5);
     G_Handler->add(p);
+    
+    std::cout << "end of spawn wave\n";
     return true;
 }
 void Level::draw()
@@ -118,8 +123,11 @@ void Level::draw()
 
 void Level::update()
 {
+    printf("Update Level %d\n", levelID);
     G_Handler->update();
+    printf("Updated objects %d\n", levelID);
     G_Collider->update();
+    printf("Updated collisions %d\n", levelID);
     
     if(s->hp <= 0)
         nextLevel = 0;

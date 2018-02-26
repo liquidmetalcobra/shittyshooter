@@ -27,7 +27,7 @@ public:
         }//*/
     }
     
-    void generateBullet(int x, int y, int xVel, int yVel, int id);
+    void generateBullet(Vector_2D location, Vector_2D velocity, int id);
     void update();
     void draw();
 private:

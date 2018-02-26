@@ -7,9 +7,9 @@
 //
 
 #include "BulletFactory.hpp"
-void BulletFactory::generateBullet(int x, int y, int xVel, int yVel, int id)
+void BulletFactory::generateBullet(Vector_2D location, Vector_2D velocity, int id)
 {
-        bullet *b = new bullet(x,y,xVel,yVel,id);
+        bullet *b = new bullet(location,velocity,id);
         bullets[count] = b;
         G_Handler->add(b);
 }

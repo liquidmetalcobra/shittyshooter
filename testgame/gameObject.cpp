@@ -28,3 +28,8 @@ void gameobject::destroy()
 {
     
 }
+void gameobject::addChild(gameobject * newChild)
+{
+    
+    _children.push_back(newChild);
+}
