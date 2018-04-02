@@ -43,6 +43,10 @@ int main(int argc, char **argv)
         return -1;
     }
     
+    
+    al_init_font_addon(); // initialize the font addon
+    al_init_ttf_addon();// initialize the ttf (True Type Font) addon
+    
     if(!al_init_image_addon()) {
         al_show_native_message_box(display, "Error", "Error", "Failed to initialize al_init_image_addon!",
                                    NULL, ALLEGRO_MESSAGEBOX_ERROR);

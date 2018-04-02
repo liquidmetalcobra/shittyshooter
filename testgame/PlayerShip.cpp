@@ -11,7 +11,7 @@
 
 void PlayerShip::update()
 {
-    printf("updagint player ship\n");
+    
    // printf("hi");
     int x = location.x;
     int y = location.y;
@@ -42,7 +42,8 @@ void PlayerShip::update()
 
 void PlayerShip::fire()
 {
-     bulletGen->generateBullet(Vector_2D(location.x+size.x, location.y+size.y/4),Vector_2D(10,0), getID());
+    Vector_2D loc = Add2DV(getAbsoluteLocation(),Vector_2D(size.x,size.y/4));
+     bulletGen->generateBullet(loc,Vector_2D(10,0), getID());
 }
 
 

@@ -54,6 +54,8 @@
 		D9AB45301FF30BE800A5EC83 /* AllegroPrimitives-5.0.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9E03C831F92B4CA00E5CB03 /* AllegroPrimitives-5.0.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9AB45311FF30BE800A5EC83 /* AllegroTTF-5.0.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9E03C841F92B4CA00E5CB03 /* AllegroTTF-5.0.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9E03C6E1F92B3EF00E5CB03 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9E03C6D1F92B3EF00E5CB03 /* main.cpp */; };
+		D9EA22572071C21100711606 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9EA22552071C21100711606 /* Window.cpp */; };
+		D9EA22592071C97300711606 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = D9EA22582071C97300711606 /* Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -138,6 +140,9 @@
 		D9E03C821F92B4CA00E5CB03 /* AllegroMemfile-5.0.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroMemfile-5.0.framework"; path = "../../../../../Library/Frameworks/AllegroMemfile-5.0.framework"; sourceTree = "<group>"; };
 		D9E03C831F92B4CA00E5CB03 /* AllegroPrimitives-5.0.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroPrimitives-5.0.framework"; path = "../../../../../Library/Frameworks/AllegroPrimitives-5.0.framework"; sourceTree = "<group>"; };
 		D9E03C841F92B4CA00E5CB03 /* AllegroTTF-5.0.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroTTF-5.0.framework"; path = "../../../../../Library/Frameworks/AllegroTTF-5.0.framework"; sourceTree = "<group>"; };
+		D9EA22552071C21100711606 /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		D9EA22562071C21100711606 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		D9EA22582071C97300711606 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Resources/Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +190,8 @@
 				D994C26B1F9D747700D59377 /* HealthBar.hpp */,
 				D90CDFFA1FDE0BF100F69FBE /* Button.cpp */,
 				D90CDFFB1FDE0BF100F69FBE /* Button.hpp */,
+				D9EA22552071C21100711606 /* Window.cpp */,
+				D9EA22562071C21100711606 /* Window.hpp */,
 				D994C2671F9D731C00D59377 /* UIElement.cpp */,
 				D994C2681F9D731C00D59377 /* UIElement.hpp */,
 			);
@@ -204,6 +211,7 @@
 		D94D0CE320155BAE00BD985E /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				D9EA22582071C97300711606 /* Fonts */,
 				D94D0CE8201E9D0A00BD985E /* Scripts */,
 				D94D0CE120155B6800BD985E /* LuaBridge */,
 			);
@@ -347,6 +355,7 @@
 				D94D0CE9201E9D0A00BD985E /* Scripts in Resources */,
 				D94D0CE220155B6800BD985E /* LuaBridge in Resources */,
 				D9241BFE1FF30D0C00268430 /* playership.png in Resources */,
+				D9EA22592071C97300711606 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +378,7 @@
 				D90CDFF81FDE0B0300F69FBE /* MainMenu.cpp in Sources */,
 				D994C2691F9D731C00D59377 /* UIElement.cpp in Sources */,
 				D994C2661F9D675C00D59377 /* GameObjectHandler.cpp in Sources */,
+				D9EA22572071C21100711606 /* Window.cpp in Sources */,
 				D94378F72043AF1A00FE0AC6 /* EmptyGameObject.cpp in Sources */,
 				D994C2511F92C53300D59377 /* globals.cpp in Sources */,
 				D91E49F0203129C900AAE0FC /* PowerUp.cpp in Sources */,

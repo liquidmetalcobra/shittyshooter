@@ -38,8 +38,9 @@ bool enemyShip::init(string scriptName)
         id = table["id"].cast<int>();
         firerate = table["fireRate"].cast<int>();
         hp = table["health"].cast<int>();
-        s_w = table["width"].cast<int>();
-        s_h = table["height"].cast<int>();
+        spriteSize.x = table["width"].cast<int>();
+        
+        spriteSize.y = table["height"].cast<int>();
         std::cout << "before make func\n";
         updateFunc = std::make_shared<luabridge::LuaRef>(table["update"]);
         std::cout << "after make func\n";
@@ -48,9 +49,10 @@ bool enemyShip::init(string scriptName)
         return false;
    
     count = 0;
-    
+    size.x = spriteSize.x;
+    size.y = spriteSize.y;
     b = al_create_bitmap(size.x, size.y);
-    
+    cout << size.x << "\t" << size.y << "\n";
     al_set_target_bitmap(b);
     al_clear_to_color(al_map_rgb(55, 10, 123));
    
@@ -80,7 +82,7 @@ void enemyShip::update()
     
     if (count > firerate)
     {
-        bulletGen->generateBullet(location, Vector_2D(-10, 0), getID());
+        bulletGen->generateBullet(getAbsoluteLocation(), Vector_2D(-10, 0), getID());
         count = 0;
     }
     else

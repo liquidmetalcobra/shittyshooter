@@ -37,11 +37,12 @@ void ship::fire()
 void ship::draw()
 {
     
-    int x = location.x;
-    int y = location.y;
+    int x = getAbsoluteLocation().x;
+    int y = getAbsoluteLocation().y;
     int w = size.x;
     int h = size.y;
-    
+    int s_w = spriteSize.x;
+    int s_h = spriteSize.y;
     al_draw_scaled_bitmap(b, 0, 0, s_w, s_h, x, y, w, h, 0);
     bulletGen->draw();
 }

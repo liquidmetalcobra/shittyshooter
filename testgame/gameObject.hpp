@@ -11,6 +11,8 @@
 #include <vector>
 #include "allegro5/allegro.h"
 #include "allegro5/allegro_image.h"
+#include "allegro5/allegro_font.h"
+#include "allegro5/allegro_ttf.h"
 #include "globals.h"
 
 class gameobject
@@ -41,8 +43,14 @@ public:
     
     float getX() { return location.x; }
     float getY() { return location.y; }
+    float getLocalX() { return localLocation.x; }
+    float getLocalY() { return localLocation.y; }
     float getWidth() { return size.x; }
     float getHeight() { return size.y; }
+    Vector_2D getAbsoluteLocation() { return (parent != NULL) ? Add2DV(parent->getAbsoluteLocation(), localLocation) : location; }
+    Vector_2D getLocation() { return location; }
+    Vector_2D getSize() { return size; }
+    Vector_2D getLocalLocation() { return localLocation; }
     
     bool getVisible() { return visible; }
     
@@ -55,6 +63,8 @@ public:
     
     void setX(float newX) { location.x = newX; }
     void setY(float newY) { location.y = newY; }
+    void setLocalX(float newX) { localLocation.x = newX; }
+    void setLocalY(float newY) { localLocation.y = newY; }
     void setID(float newID) { id = newID; }
     void setVisible(bool newVisible) { visible = newVisible; }
     
@@ -67,13 +77,15 @@ public:
     void removeAllChildren();
     void addChild(gameobject * newChild);
     void removeChild(gameobject *child);
+    void removeParent() { if (parent != NULL) parent->removeChild(this); }
     bool isParentOf(gameobject * child);
     bool isChildOf(gameobject * parent);
-    
+    bool hasParent() { return parent != NULL; }
     
 protected:
     bool visible;
     Vector_2D location;
+    Vector_2D localLocation;
     Vector_2D size;
     
     int id;

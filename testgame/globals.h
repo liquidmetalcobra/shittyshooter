@@ -25,6 +25,7 @@ enum GameObjectID { GAME_OBJECT_ID_POWERUP = -1, GAME_OBJECT_ID_PLAYERSHIP, GAME
 #define G_BOUNCER_SIZE GlobalConfig::instance()->BOUNCER_SIZE()
 #define G_LEVEL_SCRIPT_LOCATION GlobalConfig::instance()->LEVEL_SCRIPT_LOCATION()
 #define G_ENEMY_SCRIPT_LOCATION GlobalConfig::instance()->ENEMY_SCRIPT_LOCATION()
+#define G_FONT_LOCATION GlobalConfig::instance()->FONT_LOCATION()
 
 
 
@@ -71,6 +72,7 @@ class GlobalConfig
         _BOUNCER_SIZE = luabridge::getGlobal(L, "BOUNCER_SIZE").cast<int>();
         _LEVEL_SCRIPT_LOCATION = luabridge::getGlobal(L, "LEVEL_SCRIPT_LOCATION").cast<std::string>();
         _ENEMY_SCRIPT_LOCATION = luabridge::getGlobal(L, "ENEMY_SCRIPT_LOCATION").cast<std::string>();
+        _FONT_LOCATION = luabridge::getGlobal(L, "FONT_LOCATION").cast<std::string>();
         
     }
     ~GlobalConfig(){}
@@ -81,6 +83,7 @@ class GlobalConfig
     int _BOUNCER_SIZE;
     std::string _LEVEL_SCRIPT_LOCATION;
     std::string _ENEMY_SCRIPT_LOCATION;
+    std::string _FONT_LOCATION;
     
 public:
     static GlobalConfig *instance()
@@ -95,6 +98,7 @@ public:
     int BOUNCER_SIZE() { return _BOUNCER_SIZE; }
     std::string LEVEL_SCRIPT_LOCATION() { return _LEVEL_SCRIPT_LOCATION; }
     std::string ENEMY_SCRIPT_LOCATION() { return _ENEMY_SCRIPT_LOCATION; }
+    std::string FONT_LOCATION() { return _FONT_LOCATION; }
     
 };
 

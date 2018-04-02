@@ -56,8 +56,9 @@ public:
     int hp;
 protected:
     ALLEGRO_BITMAP *b;
-    int s_w;
-    int s_h;
+    
+    Vector_2D spriteSize;
+    
     BulletFactory *bulletGen;
     
     

@@ -63,9 +63,12 @@ void Level::load(PlayerShip *ps)
     Vector_2D loc(20,20);
     Vector_2D size(400,100);
     HealthBar *hp = new HealthBar(loc,size,s,&s->hp);
-    HelperShip *hs = new HelperShip(Vector_2D(bouncer_x+100,bouncer_y),Vector_2D(G_BOUNCER_SIZE/2,G_BOUNCER_SIZE/2));
-    s->addChild(hs);
-
+    //HelperShip *hs = new HelperShip(Vector_2D(bouncer_x+100,bouncer_y),Vector_2D(G_BOUNCER_SIZE/2,G_BOUNCER_SIZE/2));
+    //cout << hs->getLocalLocation().toString() << hs->getAbsoluteLocation().toString() << "\n";
+    //s->addChild(hs);
+    //cout << hs->getLocalLocation().toString() << hs->getAbsoluteLocation().toString() << "\n";
+    
+    //printf("Empty has no parent %d child has parent %d",s->hasParent(), hs->hasParent());
                                     
     
     loadWave(currentWave);
@@ -73,7 +76,7 @@ void Level::load(PlayerShip *ps)
     G_Handler->add(s);
     
     G_Handler->add(hp);
-    G_Handler->add(hs);
+  //  G_Handler->add(hs);
 
 }
 
@@ -106,6 +109,7 @@ bool Level::loadWave(int waveID)
                 enemyShip *e = new enemyShip(loc,name);
                 swarmContainer->addChild(e);
                 G_Handler->add(e);
+                std::cout << "hi" << e->getAbsoluteLocation().toString();
             }
             
             fprintf(stderr, "%s\n", lua_tostring(LevelState, -1));

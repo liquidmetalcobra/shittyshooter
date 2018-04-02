@@ -23,12 +23,21 @@ public:
         
         b = al_create_bitmap(size.x, size.y);
         al_set_target_bitmap(b);
-        al_clear_to_color(al_map_rgb(255, 0, 0));
+        al_clear_to_color(al_map_rgb(255, 255, 255));
         
         
         background = al_create_bitmap(size.x, size.y);
         al_set_target_bitmap(background);
-        al_clear_to_color(al_map_rgb(255, 255, 255));
+        al_clear_to_color(al_map_rgb(125, 125, 125));
+        
+        std::string fontName = G_FONT_LOCATION + "8bit.ttf";
+        
+        font = al_load_ttf_font(fontName.c_str(),15,0 );
+        if (!font){
+            fprintf(stderr, "Could not load 'pirulen.ttf'.\n");
+            
+        }
+        
     }
     ~Button()
     {
@@ -47,7 +56,7 @@ protected:
 private:
     
     void (*buttonPressed)(void);
-    
+    ALLEGRO_FONT *font;
     
     
     

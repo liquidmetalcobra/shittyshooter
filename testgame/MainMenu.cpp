@@ -45,7 +45,8 @@ void MainMenu::update()
 
 void MainMenu::handleKeyboardEvent(ALLEGRO_EVENT ev)
 {
-    
+    //if (key[KEY_ESCAPE] && ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE)
+        
     
 }
 

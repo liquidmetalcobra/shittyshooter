@@ -5,3 +5,4 @@ BOUNCER_SIZE = 32;
 --SHOW_LOGS = false;
 LEVEL_SCRIPT_LOCATION="Scripts/Levels/"
 ENEMY_SCRIPT_LOCATION="Scripts/Enemies/"
+FONT_LOCATION="Fonts/"

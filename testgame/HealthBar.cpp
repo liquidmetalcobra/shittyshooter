@@ -18,8 +18,8 @@ void HealthBar::init()
 }
 void HealthBar::draw()
 {
-    int x = location.x;
-    int y = location.y;
+    int x = getAbsoluteLocation().x;
+    int y = getAbsoluteLocation().y;
     int w = size.x;
     int h = size.y;
     al_draw_bitmap(background, x, y, 0);

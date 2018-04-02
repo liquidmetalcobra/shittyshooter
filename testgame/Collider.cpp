@@ -35,7 +35,7 @@ void collider::empty(collisionClasses c)
 }
 void collider::update()
 {
-    
+ 
     unsigned long s = ships.size();
     unsigned long b = bullets.size();
     unsigned long p = powerups.size();
@@ -43,28 +43,23 @@ void collider::update()
         for (int j = 0; j < b; j++)
         {
             
-            if (checkCollision(ships[i], bullets[j]))
+            if (!bullets[j]->markForDeath && !ships[i]->markForDeath && checkCollision(ships[i], bullets[j]))
             {
-                if (!bullets[j]->markForDeath && !ships[i]->markForDeath)
-                {
                // printf("Bullet %d and Ship %d collision\n",j,i);
                 ships[i]->collide(bullets[j]);
                 bullets[j]->collide(ships[i]);
-                }
+             
             }
         }
     for(int i = 0; i < s; i++)
         for (int j = 0; j < p; j++)
         {
             
-            if (checkCollision(ships[i], powerups[j]))
+            if (!powerups[j]->markForDeath && !ships[i]->markForDeath && checkCollision(ships[i], powerups[j]))
             {
-                if (!powerups[j]->markForDeath && !ships[i]->markForDeath)
-                {
-                    // printf("Bullet %d and Ship %d collision\n",j,i);
-                    ships[i]->collide(powerups[j]);
-                    powerups[j]->collide(ships[i]);
-                }
+                // printf("Bullet %d and Ship %d collision\n",j,i);
+                ships[i]->collide(powerups[j]);
+                powerups[j]->collide(ships[i]);
             }
         }
     for(int i = 0; i < s; i++)
@@ -110,21 +105,20 @@ bool collider::checkCollision(gameobject* a, gameobject* b)
     }*/
     
     float ax,ay,bx,by;
-    ax = a->getX();
-    ay = a->getY();
-    bx = b->getX();
-    by = b->getY();
+    ax = a->getAbsoluteLocation().x;
+    ay = a->getAbsoluteLocation().y;
+    bx = b->getAbsoluteLocation().x;
+    by = b->getAbsoluteLocation().y;
     int aw = a->getWidth();
     int ah = a->getHeight();
     int bw = b->getWidth();
     int bh = b->getHeight();
-    
     if ((ax > bx + bw - 1) || // is a on the right side of b?
         (ay > by + bh - 1) || // is b1 under b2?
         (bx > ax + aw - 1) || // is b2 on the right side of b1?
         (by > ay + ah - 1))   // is b2 under b1?
     {
-        // no collision
+    
         return 0;
     }
     

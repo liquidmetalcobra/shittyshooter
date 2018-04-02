@@ -13,14 +13,16 @@ void HelperShip::update()
 {
     if (count > firerate)
     {
-        bulletGen->generateBullet(location, Vector_2D(10, 0), getID());
+        bulletGen->generateBullet(getAbsoluteLocation(), Vector_2D(10, 0), getID());
         count = 0;
     }
     else
     {
         count++;
     }
-    bulletGen->update();}
+    bulletGen->update();
+   // cout << getAbsoluteLocation().toString() << getLocalLocation().toString() << this->parent->getAbsoluteLocation().toString() << "\n";
+}
 
 void HelperShip::fire()
 {
