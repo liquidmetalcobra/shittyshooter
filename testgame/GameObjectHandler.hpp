@@ -42,7 +42,7 @@ public:
     void add(gameobject* go);
     void remove(gameobject * go);
     void update();
-    void draw();
+    void draw(ALLEGRO_DISPLAY *display);
     void empty() { objects.clear(); }
     long getSize() { return objects.size(); }
     

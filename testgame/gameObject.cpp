@@ -17,7 +17,7 @@ void gameobject::collide(gameobject *go)
 void gameobject::update()
 {
 }
-void gameobject::draw()
+void gameobject::draw(ALLEGRO_DISPLAY *display)
 {
 }
 void gameobject::init()

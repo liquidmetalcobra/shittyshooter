@@ -16,10 +16,10 @@ void Window::init()
 {
     
 }
-void Window::draw()
+void Window::draw(ALLEGRO_DISPLAY *display)
 {
     al_draw_bitmap(background, location.x, location.y, 0);
-    al_draw_bitmap(b,location.x, location.y, 0);
+   // al_draw_bitmap(b,location.x, location.y, 0);
     //al_draw_scaled_bitmap(b, 0, 0, w, h, x, y, w, h, 0);
 }
 void Window::destroy()

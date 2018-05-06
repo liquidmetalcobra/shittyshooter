@@ -1,5 +1,5 @@
 //
-//  Window.hpp
+//  TextBox.hpp
 //  testgame
 //
 //  Created by Sasha Han on 10/22/17.
@@ -13,41 +13,45 @@
 #include "UIElement.hpp"
 #include "Button.hpp"
 
-class Window : public UIElement
+class TextBox : public UIElement
 {
     
 public:
-    Window(Vector_2D loc, Vector_2D size, void * callBack) : UIElement(loc,size,NULL)
+    TextBox(Vector_2D loc, Vector_2D size, std::string t, ALLEGRO_COLOR *c) : UIElement(loc,size,NULL)
     {
-        //WindowPressed = (void *)callBack;
+        //TextBoxPressed = (void *)callBack;
+       
+        std::string fontName = G_FONT_LOCATION + "8bit.ttf";
+        //buttonPressed = (void *)callBack;
+        font = al_load_ttf_font(fontName.c_str(),30,0 );
         
-        b = al_create_bitmap(size.x, size.y);
-        al_set_target_bitmap(b);
-        al_clear_to_color(al_map_rgb(0, 0, 0));
+        color = c ? *c : al_map_rgb(0, 0, 0);
         
+        text = t;
         
         background = al_create_bitmap(size.x, size.y);
         al_set_target_bitmap(background);
         al_clear_to_color(al_map_rgb(255, 255, 255));
     }
-    ~Window()
+    ~TextBox()
     {
-        al_destroy_bitmap(b);
+        
         al_destroy_bitmap(background);
     }
     void update();
     void init();
     void draw(ALLEGRO_DISPLAY *display);
     void destroy();
-    bool isWindowClicked(int mbX, int mbY);
     
     
 protected:
     
-private:
-    std::vector<Button*> buttons;
-    void (*WindowPressed)(void);
+
     
+    std::string text;
+    ALLEGRO_COLOR c;
+    ALLEGRO_FONT *font;
+private:    
     
     
     

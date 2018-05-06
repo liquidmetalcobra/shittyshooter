@@ -34,7 +34,7 @@ void ship::fire()
     
  
 }
-void ship::draw()
+void ship::draw(ALLEGRO_DISPLAY *display)
 {
     
     int x = getAbsoluteLocation().x;
@@ -44,7 +44,7 @@ void ship::draw()
     int s_w = spriteSize.x;
     int s_h = spriteSize.y;
     al_draw_scaled_bitmap(b, 0, 0, s_w, s_h, x, y, w, h, 0);
-    bulletGen->draw();
+    bulletGen->draw(display);
 }
 void ship::collide(gameobject *go)
 {

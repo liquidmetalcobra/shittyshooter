@@ -5,6 +5,7 @@
 //  Created by Sasha Han on 10/22/17.
 //  Copyright © 2017 __. All rights reserved.
 //
+#pragma once
 
 #ifndef PlayerShip_hpp
 #define PlayerShip_hpp
@@ -25,6 +26,8 @@ public:
         spriteSize.x = 224;
         spriteSize.y = 154;
         hp = 100;
+        hpMax = 100;
+        gold = 100;
 
     }
     ~PlayerShip()
@@ -35,7 +38,7 @@ public:
     void fire();
     void update();
     
-    
+    int gold;
 private:
     
 };

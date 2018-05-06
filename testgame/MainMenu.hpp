@@ -28,7 +28,7 @@ public:
     {
     }
     void init();
-    void draw();
+    void draw(ALLEGRO_DISPLAY *display);
     void update();
     void load(PlayerShip *ps);
     void handleKeyboardEvent ( ALLEGRO_EVENT ev);
@@ -37,7 +37,8 @@ public:
 protected:
     
     Button *but;
-   
+    
+    std::vector<Button*> lvlSelect;
     
 };
 

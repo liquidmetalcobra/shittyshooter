@@ -38,6 +38,7 @@ bool enemyShip::init(string scriptName)
         id = table["id"].cast<int>();
         firerate = table["fireRate"].cast<int>();
         hp = table["health"].cast<int>();
+        hpMax = hp;
         spriteSize.x = table["width"].cast<int>();
         
         spriteSize.y = table["height"].cast<int>();
@@ -66,9 +67,10 @@ void enemyShip::collide(gameobject *go)
         hp-=10;
         if (hp<=0)
         {
-            PowerUp *p = new PowerUp(location,Vector_2D(-5,5));
-            G_Handler->add(p);
             
+            PowerUp *p = new PowerUp(location,Vector_2D(-5,5),rand()%(GAME_OBJECT_ID_POWERUP-GAME_OBJECT_ID_POWERUP_HEALTH));
+            G_Handler->add(p);
+            gScore += 100;
             markForDeath = true;
         }
     }

@@ -15,7 +15,7 @@ void EmptyGameObject::collide(gameobject *go)
 void EmptyGameObject::update()
 {
 }
-void EmptyGameObject::draw()
+void EmptyGameObject::draw(ALLEGRO_DISPLAY *display)
 {
 }
 void EmptyGameObject::init()

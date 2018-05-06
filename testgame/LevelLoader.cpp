@@ -23,9 +23,9 @@ void LevelLoader::init()
     levels.push_back(l2);
     levels.push_back(l3);
 }
-void LevelLoader::draw()
+void LevelLoader::draw(ALLEGRO_DISPLAY *display)
 {
-    levels[currentLevel]->draw();
+    levels[currentLevel]->draw(display);
 }
 
 

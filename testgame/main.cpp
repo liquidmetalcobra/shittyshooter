@@ -136,7 +136,7 @@ int main(int argc, char **argv)
             redraw = false;
             al_set_target_bitmap(al_get_backbuffer(display));
             al_clear_to_color(al_map_rgb(0,0,0));
-            lev.draw();
+            lev.draw(display);
             //al_draw_bitmap(bouncer, bouncer_x, bouncer_y, 0);
             
             al_flip_display();

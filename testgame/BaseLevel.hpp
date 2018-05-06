@@ -30,7 +30,7 @@ public:
         
     }
     virtual void init() = 0;
-    virtual void draw() = 0;
+    virtual void draw(ALLEGRO_DISPLAY *display) = 0;
     virtual void load(PlayerShip *ps) = 0;
     virtual void update() = 0;
     virtual void handleKeyboardEvent ( ALLEGRO_EVENT ev) = 0;

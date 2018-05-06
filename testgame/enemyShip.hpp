@@ -14,12 +14,14 @@
 #include "Collider.hpp"
 #include "ship.hpp"
 #include "PowerUp.hpp"
+#include <stdlib.h>
 class enemyShip : public ship {
 public:
     
     enemyShip(Vector_2D loc,string scriptName) : ship(loc,Vector_2D(20,20))
     {
         
+        srand (time(NULL));
         updateFunc = nullptr;
         
         init(scriptName);

@@ -28,7 +28,7 @@ public:
     }
     
     void init();
-    void draw();
+    void draw(ALLEGRO_DISPLAY *display);
     void update();
     
     void handleKeyboardEvent ( ALLEGRO_EVENT ev);

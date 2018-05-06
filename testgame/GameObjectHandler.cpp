@@ -52,11 +52,11 @@ void GameObjectHandler::update()
 }
 
 
-void GameObjectHandler::draw()
+void GameObjectHandler::draw(ALLEGRO_DISPLAY *display)
 {
     for (int i = 0; i < objects.size(); i++)
     {
         if (objects[i]->getVisible())
-            objects[i]->draw();
+            objects[i]->draw(display);
     }
 }

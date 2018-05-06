@@ -29,7 +29,7 @@ public:
     
     void generateBullet(Vector_2D location, Vector_2D velocity, int id);
     void update();
-    void draw();
+    void draw(ALLEGRO_DISPLAY *display);
 private:
     
     bullet* bullets[10];

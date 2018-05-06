@@ -32,7 +32,7 @@ public:
     void collide(gameobject *go);
     void update();
     void init();
-    void draw();
+    void draw(ALLEGRO_DISPLAY *display);
     void destroy();
     
     

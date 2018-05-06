@@ -43,7 +43,7 @@ public:
     void collide(gameobject *go);
     virtual void update();
     void init();
-    void draw();
+    void draw(ALLEGRO_DISPLAY *display);
     void destroy();
     
     int getHP() { return hp; }
@@ -54,6 +54,7 @@ public:
     void move (int x, int y);
 
     int hp;
+    int hpMax;
 protected:
     ALLEGRO_BITMAP *b;
     

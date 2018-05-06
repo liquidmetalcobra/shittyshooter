@@ -23,7 +23,7 @@ void PowerUp::update()
     
     if (x < 0 || x > G_SCREEN_W)
         velocity.x *= -1;
-    if (y < 0 || y > G_SCREEN_H)
+    if (y < G_SCREEN_CEILING || y > G_SCREEN_H)
         velocity.y *= -1;
     
     timeToLive--;
@@ -34,7 +34,7 @@ void PowerUp::init()
 {
     
 }
-void PowerUp::draw()
+void PowerUp::draw(ALLEGRO_DISPLAY *display)
 {
     int x = location.x;
     int y = location.y;

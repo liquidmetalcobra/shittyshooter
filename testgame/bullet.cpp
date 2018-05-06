@@ -28,7 +28,7 @@ void bullet::init()
 {
     
 }
-void bullet::draw()
+void bullet::draw(ALLEGRO_DISPLAY *display)
 {
     int x = location.x;
     int y = location.y;

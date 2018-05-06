@@ -13,7 +13,7 @@ void BulletFactory::generateBullet(Vector_2D location, Vector_2D velocity, int i
         bullets[count] = b;
         G_Handler->add(b);
 }
-void BulletFactory::draw()
+void BulletFactory::draw(ALLEGRO_DISPLAY *display)
 {
     
 

@@ -17,11 +17,21 @@ extern "C" {
 #include "VectorMath.hpp"
 
 enum collisionClasses { COLLISION_CLASS_NONE, COLLISION_CLASS_SHIP, COLLISION_CLASS_BULLET, COLLISION_CLASS_POWERUP};
-enum GameObjectID { GAME_OBJECT_ID_POWERUP = -1, GAME_OBJECT_ID_PLAYERSHIP, GAME_OBJECT_ID_ENEMYSHIP};
+enum GameObjectID {
+
+    GAME_OBJECT_ID_POWERUP_HEALTH = -4,
+    GAME_OBJECT_ID_POWERUP_SCORE = -3,
+    GAME_OBJECT_ID_POWERUP_GOLD = -2,
+    
+    GAME_OBJECT_ID_POWERUP = -1,
+    GAME_OBJECT_ID_PLAYERSHIP,
+    GAME_OBJECT_ID_ENEMYSHIP
+};
 
 #define G_FPS GlobalConfig::instance()->FPS()
 #define G_SCREEN_W GlobalConfig::instance()->SCREEN_W()
 #define G_SCREEN_H GlobalConfig::instance()->SCREEN_H()
+#define G_SCREEN_CEILING GlobalConfig::instance()->SCREEN_CEILING()
 #define G_BOUNCER_SIZE GlobalConfig::instance()->BOUNCER_SIZE()
 #define G_LEVEL_SCRIPT_LOCATION GlobalConfig::instance()->LEVEL_SCRIPT_LOCATION()
 #define G_ENEMY_SCRIPT_LOCATION GlobalConfig::instance()->ENEMY_SCRIPT_LOCATION()
@@ -47,7 +57,7 @@ struct VECTOR_3D {
 typedef struct VECTOR_2D V2D;
 typedef struct VECTOR_3D V3D;
 
-
+extern int gScore;
 
 
 
@@ -69,6 +79,7 @@ class GlobalConfig
         _FPS = luabridge::getGlobal(L, "FPS").cast<float>();
         _SCREEN_W = luabridge::getGlobal(L, "SCREEN_W").cast<int>();
         _SCREEN_H = luabridge::getGlobal(L, "SCREEN_H").cast<int>();
+        _SCREEN_CEILING = luabridge::getGlobal(L, "SCREEN_CEILING").cast<int>();
         _BOUNCER_SIZE = luabridge::getGlobal(L, "BOUNCER_SIZE").cast<int>();
         _LEVEL_SCRIPT_LOCATION = luabridge::getGlobal(L, "LEVEL_SCRIPT_LOCATION").cast<std::string>();
         _ENEMY_SCRIPT_LOCATION = luabridge::getGlobal(L, "ENEMY_SCRIPT_LOCATION").cast<std::string>();
@@ -80,6 +91,7 @@ class GlobalConfig
     float _FPS;
     int _SCREEN_W;
     int _SCREEN_H;
+    int _SCREEN_CEILING;
     int _BOUNCER_SIZE;
     std::string _LEVEL_SCRIPT_LOCATION;
     std::string _ENEMY_SCRIPT_LOCATION;
@@ -95,6 +107,7 @@ public:
     float FPS() { return _FPS; }
     int SCREEN_W() { return _SCREEN_W; }
     int SCREEN_H() { return _SCREEN_H; }
+    int SCREEN_CEILING() { return _SCREEN_CEILING; }
     int BOUNCER_SIZE() { return _BOUNCER_SIZE; }
     std::string LEVEL_SCRIPT_LOCATION() { return _LEVEL_SCRIPT_LOCATION; }
     std::string ENEMY_SCRIPT_LOCATION() { return _ENEMY_SCRIPT_LOCATION; }

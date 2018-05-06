@@ -14,6 +14,9 @@ void Level::init()
 }
 void Level::init(int level)
 {
+    
+    
+    
     LevelState = luaL_newstate();
     
     swarmContainer = new EmptyGameObject;
@@ -53,16 +56,20 @@ void Level::load(PlayerShip *ps)
     G_Collider->empty(COLLISION_CLASS_BULLET);
     swarmContainer->removeAllChildren();
     if (ps == NULL)
+    {
         s = new PlayerShip(Vector_2D(bouncer_x,bouncer_y),Vector_2D(G_BOUNCER_SIZE+10,G_BOUNCER_SIZE));
+        gScore = 0;
+    }
     else
     {
         s = ps;
         
     }
     
-    Vector_2D loc(20,20);
-    Vector_2D size(400,100);
-    HealthBar *hp = new HealthBar(loc,size,s,&s->hp);
+    ui = new LevelUI(s);
+    
+    
+    
     //HelperShip *hs = new HelperShip(Vector_2D(bouncer_x+100,bouncer_y),Vector_2D(G_BOUNCER_SIZE/2,G_BOUNCER_SIZE/2));
     //cout << hs->getLocalLocation().toString() << hs->getAbsoluteLocation().toString() << "\n";
     //s->addChild(hs);
@@ -75,7 +82,7 @@ void Level::load(PlayerShip *ps)
     
     G_Handler->add(s);
     
-    G_Handler->add(hp);
+    
   //  G_Handler->add(hs);
 
 }
@@ -120,15 +127,18 @@ bool Level::loadWave(int waveID)
         }
     }
     
-    PowerUp *p = new PowerUp(Vector_2D(700,500),Vector_2D(-5,5));
+    PowerUp *p = new PowerUp(Vector_2D(700,500),Vector_2D(-5,5),0);
     G_Handler->add(p);
     
     std::cout << "end of spawn wave\n";
     return true;
 }
-void Level::draw()
+void Level::draw(ALLEGRO_DISPLAY *display)
 {
-    G_Handler->draw();
+    
+    G_Handler->draw(display);
+    std::string levID = itos(levelID);
+    al_draw_text(font, color, 0, 0, NULL, levID.c_str());
 }
 
 

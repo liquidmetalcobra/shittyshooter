@@ -20,6 +20,7 @@
 #include "GameObjectHandler.hpp"
 #include "HealthBar.hpp"
 #include "EmptyGameObject.hpp"
+#include "LevelUI.hpp"
 using namespace std;
 
 class Level : public BaseLevel{
@@ -27,7 +28,14 @@ public:
     Level(int level) : BaseLevel()
     {
         
+        std::string fontName = G_FONT_LOCATION + "8bit.ttf";
+        //buttonPressed = (void *)callBack;
+        font = al_load_ttf_font(fontName.c_str(),30,0 );
+        float alpha = 1.0f;
+        color = al_map_rgba_f(1.0*alpha, 1.0*alpha, 1.0*alpha, alpha); // <-- correct
         
+        
+ 
         
         init(level);
     }
@@ -38,7 +46,7 @@ public:
     }
     void init();
     void init(int level);
-    void draw();
+    void draw(ALLEGRO_DISPLAY *display);
     void update();
     void load(PlayerShip *ps);
     void handleKeyboardEvent ( ALLEGRO_EVENT ev);
@@ -50,7 +58,11 @@ protected:
     int currentWave;
     int defaultNextLevel;
     EmptyGameObject *swarmContainer;
+    LevelUI *ui;
     lua_State* LevelState;
+    
+    ALLEGRO_FONT *font;
+    ALLEGRO_COLOR color;
     
 };
 

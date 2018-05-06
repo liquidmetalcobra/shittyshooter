@@ -56,6 +56,9 @@
 		D9E03C6E1F92B3EF00E5CB03 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9E03C6D1F92B3EF00E5CB03 /* main.cpp */; };
 		D9EA22572071C21100711606 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9EA22552071C21100711606 /* Window.cpp */; };
 		D9EA22592071C97300711606 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = D9EA22582071C97300711606 /* Fonts */; };
+		D9EA2275208D3DED00711606 /* LevelUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9EA2273208D3DED00711606 /* LevelUI.cpp */; };
+		D9EA2278208D41E100711606 /* TextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9EA2276208D41E100711606 /* TextBox.cpp */; };
+		D9EA227B208D4C6800711606 /* IntTextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9EA2279208D4C6800711606 /* IntTextBox.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -143,6 +146,12 @@
 		D9EA22552071C21100711606 /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
 		D9EA22562071C21100711606 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
 		D9EA22582071C97300711606 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Resources/Fonts; sourceTree = "<group>"; };
+		D9EA2273208D3DED00711606 /* LevelUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelUI.cpp; sourceTree = "<group>"; };
+		D9EA2274208D3DED00711606 /* LevelUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LevelUI.hpp; sourceTree = "<group>"; };
+		D9EA2276208D41E100711606 /* TextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextBox.cpp; sourceTree = "<group>"; };
+		D9EA2277208D41E100711606 /* TextBox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextBox.hpp; sourceTree = "<group>"; };
+		D9EA2279208D4C6800711606 /* IntTextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntTextBox.cpp; sourceTree = "<group>"; };
+		D9EA227A208D4C6800711606 /* IntTextBox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IntTextBox.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +181,8 @@
 			children = (
 				D90CDFFD1FDE198F00F69FBE /* LevelLoader.cpp */,
 				D90CDFFE1FDE198F00F69FBE /* LevelLoader.hpp */,
+				D9EA2273208D3DED00711606 /* LevelUI.cpp */,
+				D9EA2274208D3DED00711606 /* LevelUI.hpp */,
 				D90CDFF01FDE039500F69FBE /* BaseLevel.cpp */,
 				D90CDFF11FDE039500F69FBE /* BaseLevel.hpp */,
 				D90CDFF31FDE07F200F69FBE /* Level.cpp */,
@@ -188,6 +199,10 @@
 			children = (
 				D994C26A1F9D747700D59377 /* HealthBar.cpp */,
 				D994C26B1F9D747700D59377 /* HealthBar.hpp */,
+				D9EA2276208D41E100711606 /* TextBox.cpp */,
+				D9EA2277208D41E100711606 /* TextBox.hpp */,
+				D9EA2279208D4C6800711606 /* IntTextBox.cpp */,
+				D9EA227A208D4C6800711606 /* IntTextBox.hpp */,
 				D90CDFFA1FDE0BF100F69FBE /* Button.cpp */,
 				D90CDFFB1FDE0BF100F69FBE /* Button.hpp */,
 				D9EA22552071C21100711606 /* Window.cpp */,
@@ -366,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9EA227B208D4C6800711606 /* IntTextBox.cpp in Sources */,
 				D9E03C6E1F92B3EF00E5CB03 /* main.cpp in Sources */,
 				D994C25A1F92D23000D59377 /* BulletFactory.cpp in Sources */,
 				D90CDFFC1FDE0BF100F69FBE /* Button.cpp in Sources */,
@@ -373,6 +389,7 @@
 				D994C2631F9D5E9800D59377 /* PlayerShip.cpp in Sources */,
 				D994C26C1F9D747700D59377 /* HealthBar.cpp in Sources */,
 				D994C2491F92B9AF00D59377 /* gameObject.cpp in Sources */,
+				D9EA2278208D41E100711606 /* TextBox.cpp in Sources */,
 				D994C25D1F92DB1800D59377 /* enemyShip.cpp in Sources */,
 				D994C2541F92C64900D59377 /* keyboardmanager.cpp in Sources */,
 				D90CDFF81FDE0B0300F69FBE /* MainMenu.cpp in Sources */,
@@ -384,6 +401,7 @@
 				D91E49F0203129C900AAE0FC /* PowerUp.cpp in Sources */,
 				D90CDFF21FDE039500F69FBE /* BaseLevel.cpp in Sources */,
 				D994C2601F9D41E300D59377 /* Collider.cpp in Sources */,
+				D9EA2275208D3DED00711606 /* LevelUI.cpp in Sources */,
 				D94378F120438F7000FE0AC6 /* VectorMath.cpp in Sources */,
 				D994C2461F92B71700D59377 /* ship.cpp in Sources */,
 				D94378F42043A36D00FE0AC6 /* HelperShip.cpp in Sources */,

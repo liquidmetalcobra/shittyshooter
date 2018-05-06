@@ -17,9 +17,17 @@ class HealthBar : public UIElement
 {
     
 public:
-    HealthBar(Vector_2D location, Vector_2D size, gameobject * go, int * hp) : UIElement(location,size,go)
+    HealthBar(Vector_2D location, Vector_2D size, gameobject * go, int * hp, int *hmp) : UIElement(location,size,go)
     {
         healthPointer = hp;
+        healthmaxPointer = hmp;
+        
+        std::string fontName = G_FONT_LOCATION + "8bit.ttf";
+        //buttonPressed = (void *)callBack;
+        font = al_load_ttf_font(fontName.c_str(),30,0 );
+        float alpha = 1.0f;
+        color = al_map_rgba_f(1.0*alpha, 1.0*alpha, 1.0*alpha, alpha); // <-- correct
+        
         
         
         b = al_create_bitmap(size.x, size.y);
@@ -38,7 +46,7 @@ public:
     }
     void update();
     void init();
-    void draw();
+    void draw(ALLEGRO_DISPLAY *display);
     void destroy();
     
     
@@ -46,8 +54,10 @@ protected:
     
 private:
     float displayhealth;
+    float healthmax;
     int *healthPointer;
+    int *healthmaxPointer;
     
-    
-    
+    ALLEGRO_FONT *font;
+    ALLEGRO_COLOR color;
 };

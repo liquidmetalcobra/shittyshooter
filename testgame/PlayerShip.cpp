@@ -17,7 +17,7 @@ void PlayerShip::update()
     int y = location.y;
     int w = size.x;
     int h = size.y;
-    if(key[KEY_UP] && y >= 4.0) {
+    if(key[KEY_UP] && y >= 4.0 + G_SCREEN_CEILING) {
         move(0,-4);
         //move(Vector_2D(0,-4));
     }
@@ -51,7 +51,28 @@ void PlayerShip::collide(gameobject *go)
 {
     if (go->getID() < 0)//hack hihihihi
     {
-        hp+=10;
+        switch(go->getID())
+        {
+            case GAME_OBJECT_ID_POWERUP_HEALTH:
+            {
+                hp = hp == hpMax ? hpMax : hp+10;
+                break;
+            }
+            case GAME_OBJECT_ID_POWERUP_GOLD:
+            {
+                gold+=100;
+                break;
+            }
+            case GAME_OBJECT_ID_POWERUP_SCORE:
+            {
+                gScore+=1000;
+                break;
+            }
+            default:
+                break;
+                
+        }
+        
     }
     else if (go->getID() != getID())
     {

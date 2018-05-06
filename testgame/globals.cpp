@@ -15,3 +15,4 @@ GlobalConfig *GlobalConfig::g = 0;
 
 
 
+int gScore = 0;

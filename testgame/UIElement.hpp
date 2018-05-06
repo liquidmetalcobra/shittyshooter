@@ -27,13 +27,15 @@ public:
     }
     virtual void update() = 0;
     virtual void init() = 0;
-    virtual void draw() = 0;
+    virtual void draw(ALLEGRO_DISPLAY *display) = 0;
     virtual void destroy() = 0;
     
 protected:
     ALLEGRO_BITMAP *b;
     ALLEGRO_BITMAP *background;
     gameobject* object;
+    ALLEGRO_FONT *font;
+    ALLEGRO_COLOR color;
 private:
     
 };

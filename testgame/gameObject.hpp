@@ -38,7 +38,7 @@ public:
     virtual void collide(gameobject *go);
     virtual void update();
     virtual void init();
-    virtual void draw();
+    virtual void draw(ALLEGRO_DISPLAY *display);
     virtual void destroy() = 0;
     
     float getX() { return location.x; }
